@@ -5,7 +5,7 @@ import React, { CSSProperties, ReactNode, useEffect, useRef, useState } from "re
 import { useScrollTrigger } from "./useScrollTrigger";
 import { css } from "@emotion/css";
 
-const randomColor = ()=>"#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+const randomColor = () => "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 
 interface ScrollInfo {
     scrollDirection: "up" | "down";
@@ -50,16 +50,17 @@ export const ScrollTrigger = (props: ScrollTriggerProps) => {
 
     return (
         <div
-            css={context.debug ?
-                css({
+            style={context.debug ?
+                ({
                     position: "relative",
-                    border: `3px solid ${color.current}`
+                    border: `3px solid ${color.current}`,
+                    ...props.style
                 }) :
-                css({
+                ({
                     position: "relative",
+                    ...props.style
                 })}
             className={props.className}
-            style={props.style}
             ref={raw => {
                 if (raw) {
                     setMe(raw);

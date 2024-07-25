@@ -16,7 +16,7 @@ export const NewsSection = () => {
     return (
         <div className="mx-auto px-4 sm:px-0 w-full max-w-5xl">
             <FadeAndSlideScrollTriggerAnimation transform={{ translate: { x: "-10vw" } }}>
-                <SectionBar text="News" />
+                <SectionBar text="Instagram" />
             </FadeAndSlideScrollTriggerAnimation>
 
             <div className="mx-auto">
@@ -38,7 +38,7 @@ export const NewsSection = () => {
             <div className="w-full flex justify-end mt-4 sm:mt-8">
                 <div className="flex-1" />
 
-                <FadeAndSlideScrollTriggerAnimation className="w-full sm:w-auto">
+                <FadeAndSlideScrollTriggerAnimation >
                     <LinkButton title="VIEW MORE" subTitle="お知らせ一覧" href=""></LinkButton>
                 </FadeAndSlideScrollTriggerAnimation>
             </div>

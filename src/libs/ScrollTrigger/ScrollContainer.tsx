@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { CSSProperties } from "@mui/styles";
+import React, { CSSProperties, useContext, useEffect, useRef, useState } from "react";
 import { ScrollContainerContext, ScrollContext } from "./contexts";
-import { css } from "@mui/styled-engine";
 
 interface ScrollContainerProps {
-    children: React.ReactNode | React.ReactNodeArray;
+    children: React.ReactNode;
     style?: CSSProperties;
     className?: string;
     scrollStartPosition?: number;
@@ -108,13 +106,15 @@ export const ScrollContainer = (props: ScrollContainerProps) => {
             className={props.className}
         >
             <div
-                css={css({
+                style={{
                     position: "relative",
                     overflowY: "auto",
                     overflowX: "hidden",
                     height: "100%",
                     width: "100%",
-                })}
+                    display: "flex",
+                    flexDirection: "column",
+                }}
                 ref={node => {
                     if (node && !option.rawElement) {
                         setOption({
@@ -127,14 +127,18 @@ export const ScrollContainer = (props: ScrollContainerProps) => {
                     }
                 }}
             >
+
                 <ScrollContext.Provider value={option}>
                     {props.children}
                 </ScrollContext.Provider>
 
-                {option.debug && <Debug
-                    {...option}
-                />}
+
+
             </div >
+
+            {option.debug && <Debug
+                {...option}
+            />}
         </div>
     );
 };
@@ -147,7 +151,7 @@ const Debug = (props: Partial<ScrollContainerProps>) => {
                 <div style={{
                     background: "rgba(255,255,255,0.6)",
                     zIndex: 9999999,
-                    position: "sticky",
+                    position: "absolute",
                     top: 0,
                     bottom: 0,
                     right: 0,

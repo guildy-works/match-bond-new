@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;1,200&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;1,200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
 @font-face {
     font-family: "Amsterdam";
@@ -11,6 +13,11 @@
 body {
     color: rgb(var(--foreground-rgb));
     background: white;
+    @apply text-size-p text-font1;
+    font-family: "Noto Sans JP",sans-serif;
+}
+
+p{
     @apply text-size-p;
 }
 
@@ -21,7 +28,7 @@ body {
 }
 
 .link {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     position: relative;
     display: inline-block;
     text-decoration: none;

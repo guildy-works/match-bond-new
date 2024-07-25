@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 
+import SectionImg from "@/assets/section_bar.svg" 
+
 export const SectionBar = ({ text }: { text: string }) => {
 
     return (
         <div style={{ maxWidth: "424px", }} className="relative">
-            <Image src="/section_bar.svg"
+            <Image src={SectionImg}
                 className="object-cover"
                 width={424}
                 height={95}

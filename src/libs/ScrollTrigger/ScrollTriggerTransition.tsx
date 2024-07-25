@@ -13,10 +13,7 @@ interface AnimationStateStyle<T> {
 
 interface ScrollTriggerTransisionProps {
     animationStyle?: AnimationStateStyle<CSSProperties>;
-    animationEmotionCss?: AnimationStateStyle<Interpolation<Theme>>;
     animationClassName?: AnimationStateStyle<string>;
-
-    emotionCss?: Interpolation<Theme>;
     className?: string;
     style?: CSSProperties;
 
@@ -59,7 +56,6 @@ export const ScrollTriggerTransition = (props: ScrollTriggerTransisionProps) => 
         {state => (
             <div
                 className={clsx([props.className, (props.animationClassName ?? {})[state]])}
-                css={[props.emotionCss, (props.animationEmotionCss ?? {})[state]]}
                 style={{
                     ...props.style,
                     ...((props.animationStyle ?? {})[state]),
