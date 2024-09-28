@@ -1,7 +1,7 @@
 import { TitleType, TitleType2 } from "@/components/Titles"
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation"
 import ProfileImage from "@/assets/profile.jpg"
-import Profile2Image from "@/assets/profile2.jpg"
+import Profile2Image from "@/assets/profile2.JPG"
 import { SkewScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/SkewScrollTriggerAnimation"
 import { HighlightMarker } from "@/components/HighlightMarker"
 import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage"
