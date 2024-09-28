@@ -5,7 +5,7 @@ import Image from "next/image"
 
 import ProfileSmall from "@/assets/profile_small.jpg"
 import Matching from "@/assets/matching.png"
-import Omiai from "@/assets/Omiai.jpg"
+import Omiai from "@/assets/omiai.jpg"
 
 import { TransitionImage } from '@/libs/ScrollTriggerAnimations/TransitionImage';
 
