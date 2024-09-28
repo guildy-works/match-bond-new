@@ -1,17 +1,19 @@
 import { LinkButton } from "@/components/LinkButton";
 import { SectionBar } from "@/components/SectionBar"
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
+import { fetchNewses, News } from "@/models/client";
 import Link from "next/link";
-
-const newsItems = [
-    { date: '2024.04.23', title: '結婚相談所サービスをリニューアルしました' },
-    { date: '2024.04.13', title: '成功する婚活の秘訣' },
-    { date: '2024.04.06', title: '春の特別キャンペーンを開始しました' },
-    { date: '2024.04.02', title: '婚活で大切な自己PRのコツ' },
-    { date: '2024.03.22', title: '結婚相談所を選ぶ際のポイント' }
-];
+import { useEffect, useState } from "react";
 
 export const NewsSection = () => {
+
+    const [newsItems, setNewsItems] = useState<News[]>([])
+
+    useEffect(() => {
+        fetchNewses().then((news) => {
+            setNewsItems(news)
+        })
+    }, [])
 
     return (
         <div className="mx-auto px-4 sm:px-0 w-full max-w-5xl">
@@ -20,13 +22,13 @@ export const NewsSection = () => {
             </FadeAndSlideScrollTriggerAnimation>
 
             <div className="mx-auto">
-                <FadeAndSlideScrollTriggerAnimation tag="h3" className="text-4xl mt-4 sm:mt-8">新着情報・お知らせ</FadeAndSlideScrollTriggerAnimation>
+                <FadeAndSlideScrollTriggerAnimation tag="h3" className="text-title2 mt-4 sm:mt-8">新着情報・お知らせ</FadeAndSlideScrollTriggerAnimation>
 
                 <ul className="divide-y divide-gray-200">
                     {newsItems.map((item, index) => (
                         <FadeAndSlideScrollTriggerAnimation key={index}>
                             <li className="py-4 flex justify-between items-center">
-                                <span className="text-grey2">{item.date}</span>
+                                <span className="text-grey2">{item.publishedAt.getMonth() + 1}.{item.publishedAt.getDate()}</span>
                                 <Link className="ml-4" href="">{item.title}</Link>
                             </li>
                         </FadeAndSlideScrollTriggerAnimation>

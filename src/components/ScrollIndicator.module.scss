@@ -4,10 +4,14 @@
     display: flex;
     align-items: center;
     right: 24px;
-    font-family: var(--font-jost);
     color: black;
     letter-spacing: 0.6em;
     font-size: 0.5rem;
+
+    div{
+        font-weight: 300;
+        font-family: Jost, sans-serif;
+    }
 }
 
 .bar {

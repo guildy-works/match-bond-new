@@ -9,7 +9,7 @@ export const HighlightMarker = ({ children, }: {
             state => <div>
                 <span className={`relative z-10 font-bold`}>{children}</span>
                 <FadeAndSlideAnimation transform={{ translate: { x: "-200px" } }} in={state == 'entered'}
-                    className={`absolute left-0 bottom-0 w-full h-1/2 bg-red-300 opacity-50 transform -rotate-2`}
+                    className={`absolute left-0 bottom-0 w-full h-1/2 bg-color3 opacity-50 transform -rotate-2`}
                     style={{
                         content: '""',
                     }}

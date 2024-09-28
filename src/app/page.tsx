@@ -10,6 +10,8 @@ import { NewsSection } from "@/views/top/NewsSection";
 import { ScrollContainer } from "@/libs/ScrollTrigger";
 import { EventsSection } from "@/views/top/EventsSection";
 import AboutSection from "@/views/top/AboutSection";
+import { ContactSection } from "@/views/top/ContactSection";
+import { ServiceSection } from "@/views/top/ServiceSection";
 
 export default function Home() {
     return (
@@ -21,15 +23,13 @@ export default function Home() {
                 <NewsSection />
             </div>
 
-            <div className="mt-4 sm:mt-12 lg:mt-24 w-full flex justify-center bg-color4 p-3 sm:p-6 md:p-8">
+            <ServiceSection />
+
+            <div className="w-full flex justify-center bg-color4 p-3 sm:p-6 md:p-8">
                 <EventsSection />
             </div>
 
-            <Image src={KiraKira} className="mx-auto" alt="kirakira" width={1200} height={1200} />
-
-            <div className="w-full">
-
-            </div>
+            <ContactSection />
 
             <ScrollIndicator />
 

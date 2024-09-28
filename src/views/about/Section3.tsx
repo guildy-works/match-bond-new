@@ -7,7 +7,7 @@ import { HighlightMarker } from "@/components/HighlightMarker"
 import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage"
 
 export const AboutSection3 = () => (
-    <div className="max-w-5xl w-full mx-auto  bg-color8 p-8 gap-8 flex flex-col md:p-24 md:gap-24">
+    <div className="max-w-5xl w-full mx-auto  bg-color8 p-8 gap-8 flex flex-col md:p-24 md:gap-24 items-center">
     <div className="flex flex-col gap-3 sm:gap-5 md:gap-8">
         <TitleType className="mx-auto" title="代表プロフィール" subTitle="Profile" />
 
@@ -39,7 +39,8 @@ export const AboutSection3 = () => (
             いつか、このMatch-Bondの活動の中で、<br />
             婚活を含めた運動会のようなものを企画できたらなと思います。<br /><br />
 
-            毎週の婚活を「疲れたな。」｢ちょっとだるいな。」と感じる会員様は沢山いるとお聞きしています。
+            毎週の婚活を「疲れたな。」｢ちょっとだるいな。」と<br />
+            感じる会員様は沢山いるとお聞きしています。<br />
 
             せっかく頑張ろうと決めた婚活を、<br /><br />
 

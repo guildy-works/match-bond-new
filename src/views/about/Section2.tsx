@@ -6,7 +6,7 @@ import { SkewScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/SkewS
 import { HighlightMarker } from "@/components/HighlightMarker"
 
 export const AboutSection2 = () => (
-    <div className="max-w-5xl w-full mx-auto bg-color8 p-8 gap-8 md:p-24 md:gap-24 grid lg:grid-cols-2">
+    <div className="max-w-5xl w-full mx-auto bg-color8 p-8 flex flex-col gap-8 overflow-hidden">
 
         <div className="flex flex-col gap-3 sm:gap-5 md:gap-8">
             <TitleType2 title="すべての人の真摯な成婚を目指して" subTitle="01" />

@@ -7,6 +7,9 @@ import { AboutSection1 } from "@/views/about/Section1"
 import { AboutSection4 } from "@/views/about/Section4"
 import { AboutSection3 } from "@/views/about/Section3"
 import { AboutSection2 } from "@/views/about/Section2"
+import Link from "next/link"
+import { MdMail } from "react-icons/md"
+import { ContactLink } from "@/components/ContactLink"
 
 export default () => {
 
@@ -32,6 +35,9 @@ export default () => {
                 <AboutSection4 />
             </div>
 
+            <FadeAndSlideScrollTriggerAnimation innerClassName="w-fit" className="mx-auto">
+                <ContactLink />
+            </FadeAndSlideScrollTriggerAnimation>
         </div>
     )
 }

@@ -34,20 +34,18 @@ const config: Config = {
             xl: '1920px',
         },
         fontFamily: {
-            sans: ['Zen Old Mincho', 'sans-serif'],
-            serif: ['Zen Old Mincho', 'sans-serif'],
-            body: "sans",
+            jost: "Jost",
             asterdam: ['Amsterdam', 'sans-serif'],
         },
         colors: {
             ...colors,
-
-            color3: 'rgb(223 150 150)',
+           
+            color3: '#dbafaf',
             color5: '#efd8d7',
-            color1: '#f3e8e8',
+            color1: '#f5f0f0',
             color4: '#f9f3f3',
 
-            color2: '#cbe4e0',
+            color2: '#d8e5e3',
             color6: '#f9f3f3',
             color7: '#e1e7e7',
             color8: '#f3f5f5',

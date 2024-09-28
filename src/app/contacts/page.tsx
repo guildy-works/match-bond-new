@@ -6,12 +6,12 @@ export default function ContactPage() {
       <h2 className="text-xl font-semibold mb-4">当事務所へのお問い合わせはお電話または以下のフォームから承ります。</h2>
       
       <div className="mb-8">
-        <h3 className="text-2xl font-bold">お電話でのお問い合わせ</h3>
+        <h3 className="text-title3 font-bold">お電話でのお問い合わせ</h3>
         <p className="text-lg">092-409-9543</p>
         <p className="text-sm">all day 9:00 - 17:00</p>
       </div>
       
-      <h3 className="text-2xl font-bold mb-4">フォームからお問い合わせ</h3>
+      <h3 className="text-title3 font-bold mb-4">フォームからお問い合わせ</h3>
       <p className="text-sm mb-4">※の項目は必須入力項目です。</p>
       <p className="text-xs mb-6">
         このサイトはreCAPTCHAによって保護されており、Googleの

@@ -7,14 +7,18 @@ import { FadeAndSlideAnimation } from "@/libs/Animations/FadeAndSlideAnimation";
 import { SkewScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/SkewScrollTriggerAnimation";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
 import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage";
-
+import Kon1Image from '@/assets/kon1.jpg';
+import Kon2Image from '@/assets/kon2.jpg';
+import Kon3Image from '@/assets/kon3.jpg';
+import Kon4Image from '@/assets/kon4.jpg';
+import Kon5Image from '@/assets/kon5.jpg';
 
 export const TopSection = () => {
     return (
         <div className="w-full mx-auto">
             <div className="w-full flex flex-wrap">
                 <div className="flex-1 ">
-                    <FadeAndSlideAnimation in transform={{ translate: { x: "-100vw" } }}>
+                    <FadeAndSlideAnimation in transform={{ translate: { x: "-100vw" } }} className="h-fit">
                         <div className="bg-color2 h-24 sm:h-44 w-full" />
                     </FadeAndSlideAnimation>
 
@@ -56,35 +60,23 @@ export const TopSection = () => {
 
             <FadeAndSlideScrollTriggerAnimation transform={{ translate: { x: "90vw" } }}
                 className="bg-color1 w-full p-6 sm:p-12 md:p-24 relative">
-
-                <div className="container mx-auto px-4 py-8 gap-8 sm:gap-16 md:gap-24 flex flex-wrap justify-center">
-
-                    {/* 1番目の画像 */}
-                    <FadeAndSlideScrollTriggerAnimation delay={500} className="w-64 h-full">
-                        <img src="/kon1.jpg" alt="Guitar" className=" h-full object-cover rounded" />
+                <div className="mx-auto px-4 py-8 gap-2 sm:gap-3 md:gap-4 flex flex-wrap justify-center">
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={150} className="w-64 h-full">
+                        <Image src={Kon1Image} alt="Kon" className="h-full object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
-
-                    {/* 2番目の画像 */}
-                    <FadeAndSlideScrollTriggerAnimation delay={550} className="w-64 h-full">
-                        <img src="/kon2.jpg" alt="Knife" className="h-full object-cover rounded" />
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={250} className="w-64 h-full">
+                        <Image src={Kon2Image} alt="Kon" className="h-full object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
-
-                    {/* 3番目の画像 */}
-                    <FadeAndSlideScrollTriggerAnimation delay={600} className="w-64 col-span-2 h-full">
-                        <img src="/kon3.jpg" alt="Woman" className="h-full object-cover rounded" />
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={300} className="w-64 col-span-2 h-full">
+                        <Image src={Kon3Image} alt="Woman" className="h-full object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
-
-                    {/* 4番目の画像 */}
-                    <FadeAndSlideScrollTriggerAnimation delay={700} className="w-64 col-span-2 h-full">
-                        <img src="/kon4.jpg" alt="Abstract" className="h-full object-cover rounded" />
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={400} className="w-64 col-span-2 h-full">
+                        <Image src={Kon4Image} alt="Kon" className="h-full object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
-
-                    {/* 5番目の画像 */}
-                    <FadeAndSlideScrollTriggerAnimation delay={750} className=" w-64 col-span-2 h-full">
-                        <img src="/kon5.jpg" alt="Woman" className="h-full object-cover rounded" />
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={550} className=" w-64 col-span-2 h-full">
+                        <Image src={Kon5Image} alt="Kon" className="h-full object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
-
 
             </FadeAndSlideScrollTriggerAnimation>
         </div>

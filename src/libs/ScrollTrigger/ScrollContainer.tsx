@@ -7,6 +7,7 @@ interface ScrollContainerProps {
     children: React.ReactNode;
     style?: CSSProperties;
     className?: string;
+    innerClassName?: string;
     scrollStartPosition?: number;
     scrollEndPosition?: number;
     debug?: boolean;
@@ -117,6 +118,7 @@ export const ScrollContainer = (props: ScrollContainerProps) => {
                     display: "flex",
                     flexDirection: "column",
                 }}
+                className={props.innerClassName}
                 ref={node => {
                     if (node && !option.rawElement) {
                         setOption({
