@@ -15,6 +15,10 @@ export default () => {
 
     return (
         <div className="w-full flex flex-col gap-8 md:gap-24 my-12 md:my-24">
+            <title>{"Match-Bond 福山|ABOUT"}</title>
+            <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+
+
             <FadeAndSlideScrollTriggerAnimation className="mx-auto">
                 <section className="px-4">
                     <div className="container mx-auto ">

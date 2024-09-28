@@ -16,6 +16,9 @@ import { ServiceSection } from "@/views/top/ServiceSection";
 export default function Home() {
     return (
         <>
+            <title>{"Match-Bond 福山"}</title>
+            <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+
             <TopSection />
             <AboutSection />
 

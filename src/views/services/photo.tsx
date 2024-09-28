@@ -63,26 +63,25 @@ export const PhotoServiceSection: React.FC = () => {
                     プロのカメラマンがあなたのお気に入りの場所でプロフィールを撮影します。福山市内(内海以外）は無料で出張。お気に入りの場所を教えてください。一番遠くて広島市内まで撮影圏内です。
                 </p>
 
-                <div className="bg-color6 p-4 rounded-lg">
-                    <p className="text-color3 font-semibold">
-                        他人と被らないプロフで最高のSTARTを
-                    </p>
-                </div>
+                <p className="text-font3 font-semibold">
+                    他人と被らないプロフで最高のSTARTを
+                </p>
+
 
                 <PriceTable title="出張エリア 料金表" prices={travelPrices} />
 
-                <h3 className="text-title3 font-bold mt-8">料金について</h3>
+                <h3 className="text-title2 font-bold mt-8">料金について</h3>
 
                 <div className="space-y-4">
                     <div>
-                        <h4 className="font-semibold">プロカメラマン daiking</h4>
-                        <p className="text-gray-600">もちろん機材も一流の高画質。綺麗に撮影します。</p>
+                        <h4 className="text-title3">プロカメラマン</h4>
+                        <p className="text-gray-600 mt-3">機材も一流の高画質。綺麗に撮影します。</p>
                         <PriceTable title="プロカメラマン料金" prices={proPrices} />
                     </div>
 
                     <div>
-                        <h4 className="font-semibold">素人カメラマン【代表が撮ります】</h4>
-                        <p className="text-gray-600">色調整は出来ません。あなたの笑顔を引き出します。</p>
+                        <h4 className="text-title3">素人カメラマン【代表が撮ります】</h4>
+                        <p className="text-gray-600 mt-3">色調整は出来ません。あなたの笑顔を引き出します。</p>
                         <PriceTable title="素人カメラマン料金" prices={amateurPrices} />
 
                         <div className='grid grid-cols-2 gap-4 mt-8'>

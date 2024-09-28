@@ -7,6 +7,9 @@ import { Header, menuItems } from "./Header";
 
 import '@splidejs/react-splide/css';
 import { Footer } from "./Footer";
+import { Head } from "next/document";
+import { Metadata } from "next";
+
 
 export default function RootLayout({
     children,

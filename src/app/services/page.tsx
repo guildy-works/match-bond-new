@@ -27,6 +27,9 @@ import { EventDetailSection } from '@/views/services/event-detail-section';
 export default () => {
     return (
         <div className="flex flex-col items-center">
+            <title>{"Match-Bond 福山|サービス料金プラン"}</title>
+            <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+
             {/* ヒーローセクション */}
             <FadeAndSlideScrollTriggerAnimation >
                 <section className="px-4">

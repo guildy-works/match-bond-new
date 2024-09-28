@@ -27,9 +27,12 @@ const EventsPage: React.FC = () => {
 
     return (
         <div className="w-full flex flex-col justify-center bg-color4 p-3 sm:p-6 md:p-8">
-                <FadeAndSlideScrollTriggerAnimation className='mx-auto'>
-                    <h3 className="text-title2 mt-4 sm:mt-8 mb-6">イベント情報</h3>
-                </FadeAndSlideScrollTriggerAnimation>
+            <title>{"Match-Bond 福山|イベント情報"}</title>
+            <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+
+            <FadeAndSlideScrollTriggerAnimation className='mx-auto'>
+                <h3 className="text-title2 mt-4 sm:mt-8 mb-6">イベント情報</h3>
+            </FadeAndSlideScrollTriggerAnimation>
 
             <div className="mx-auto min-h-[50vh]">
 

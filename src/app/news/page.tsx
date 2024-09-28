@@ -71,6 +71,9 @@ const NewsItem = (props: {
 
     return (
         <div className="size-full">
+            <title>{"Match-Bond 福山|News"}</title>
+            <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+
             <div className="size-full flex p-4 pl-0 shadow-lg bg-white rounded-3xl overflow-hidden cursor-pointer duration-300 ease-in-out">
                 <div className="p-4 w-24 bg-color6 flex flex-col items-center justify-center gap-1 rounded-r-xl">
                     <div className="text-size-p text-color2">{date.getFullYear()}</div>

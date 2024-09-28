@@ -20,6 +20,9 @@ export default function Page() {
     }, [router.query.id])
 
     return <Layout>
+        <title>{"Match-Bond 福山|" + (news?.title ?? "")}</title>
+        <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+
         <div className='flex flex-col items-center mx-auto max-w-5xl p-4 sm:p-12 gap-4 sm:gap-8 min-h-[50vh]'>
             <h1 className='text-title2'>{news?.title ?? ""}</h1>
 

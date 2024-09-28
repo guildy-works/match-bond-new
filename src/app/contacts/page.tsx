@@ -3,14 +3,18 @@ import React from 'react';
 export default function ContactPage() {
   return (
     <div className="max-w-3xl mx-auto p-6">
+      <title>{"Match-Bond 福山|お問い合わせ"}</title>
+      <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+
+
       <h2 className="text-xl font-semibold mb-4">当事務所へのお問い合わせはお電話または以下のフォームから承ります。</h2>
-      
+
       <div className="mb-8">
         <h3 className="text-title3 font-bold">お電話でのお問い合わせ</h3>
         <p className="text-lg">092-409-9543</p>
         <p className="text-sm">all day 9:00 - 17:00</p>
       </div>
-      
+
       <h3 className="text-title3 font-bold mb-4">フォームからお問い合わせ</h3>
       <p className="text-sm mb-4">※の項目は必須入力項目です。</p>
       <p className="text-xs mb-6">
@@ -20,7 +24,7 @@ export default function ContactPage() {
         <a href="https://policies.google.com/terms" className="text-blue-500">利用規約</a>
         が適用されます。
       </p>
-      
+
       <form>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">お名前 <span className="text-red-500">*</span></label>
