@@ -1,5 +1,7 @@
-import React, { CSSProperties, useContext, useEffect, useRef, useState } from "react";
-import { ScrollContainerContext, ScrollContext } from "./contexts";
+import type { CSSProperties } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import type { ScrollContainerContext } from "./contexts";
+import { ScrollContext } from "./contexts";
 
 interface ScrollContainerProps {
     children: React.ReactNode;
@@ -94,9 +96,9 @@ export const ScrollContainer = (props: ScrollContainerProps) => {
         };
 
         handleScroll(); // Re-evaluate trigger when dependencies change
-        container?.addEventListener('scroll', handleScroll);
+        container?.addEventListener("scroll", handleScroll);
         return () => {
-            container?.removeEventListener('scroll', handleScroll);
+            container?.removeEventListener("scroll", handleScroll);
         };
     }, [option]);
 

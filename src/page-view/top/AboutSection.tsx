@@ -1,11 +1,13 @@
 import { HighlightMarker } from "@/components/HighlightMarker";
 import { LinkButton } from "@/components/LinkButton";
-import { SkewScrollTriggerAnimation } from "@/components/SkewScrollTriggerAnimation";
-import { TransitionImage } from "@/components/TransitionImage";
+
 import Link from "next/link";
 
 import Image1 from "@/assets/img.jpg";
-import { FadeAndSlideScrollTriggerAnimation } from "@/components/FadeAndSlideScriollTriggerAnimation";
+import { SkewScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/SkewScrollTriggerAnimation";
+import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
+import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage";
+
 
 
 export default function AboutSection() {

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { ScrollContainerContext, useScrollContext } from "./contexts";
+import type { ScrollContainerContext} from "./contexts";
+import { useScrollContext } from "./contexts";
 
 interface ScrollInfo {
     scrollDirection: "up" | "down";
@@ -19,18 +20,18 @@ const toPixel = (
     const ammount = Number(param.replace(/[a-zA-Z|%]/g, ""));
     const unit = param.replace(/[^a-zA-Z|%]/g, "");
     switch (unit) {
-        case "vh": {
-            const containerHeight = container.clientHeight;
-            return containerHeight * ammount * 0.01;
-        }
-        case "px": {
-            return ammount;
-        }
-        case "%": {
-            const targetHeight = target.clientHeight;
-            return targetHeight * ammount * 0.01;
-        }
-        default: return ammount;
+    case "vh": {
+        const containerHeight = container.clientHeight;
+        return containerHeight * ammount * 0.01;
+    }
+    case "px": {
+        return ammount;
+    }
+    case "%": {
+        const targetHeight = target.clientHeight;
+        return targetHeight * ammount * 0.01;
+    }
+    default: return ammount;
     }
 };
 
@@ -45,24 +46,24 @@ export const parse = (expression: string | number,
     let sum = toPixel(blocks[0], container, target);
     for (let i = 1; i < blocks.length - 1; i++) {
         switch (blocks[i]) {
-            case "+":
-                sum += toPixel(blocks[i + 1], container, target);
-                break;
-            case "-":
-                sum -= toPixel(blocks[i + 1], container, target);
-                break;
-            case "*":
-                sum *= toPixel(blocks[i + 1], container, target);
-                break;
-            case "/":
-                sum /= toPixel(blocks[i + 1], container, target);
-                break;
-            case "%":
-                sum %= toPixel(blocks[i + 1], container, target);
-                break;
-            default:
-                sum += toPixel(blocks[i + 1], container, target);
-                break;
+        case "+":
+            sum += toPixel(blocks[i + 1], container, target);
+            break;
+        case "-":
+            sum -= toPixel(blocks[i + 1], container, target);
+            break;
+        case "*":
+            sum *= toPixel(blocks[i + 1], container, target);
+            break;
+        case "/":
+            sum /= toPixel(blocks[i + 1], container, target);
+            break;
+        case "%":
+            sum %= toPixel(blocks[i + 1], container, target);
+            break;
+        default:
+            sum += toPixel(blocks[i + 1], container, target);
+            break;
         }
     }
 
@@ -165,9 +166,9 @@ export const useScrollTrigger = (options: ScrollTriggerOption = {}) => {
         };
 
         handleScroll(); // Re-evaluate trigger when dependencies change
-        container?.addEventListener('scroll', handleScroll);
+        container?.addEventListener("scroll", handleScroll);
         return () => {
-            container?.removeEventListener('scroll', handleScroll);
+            container?.removeEventListener("scroll", handleScroll);
         };
     }, [container, options.scrollEventPerSecond, options.target]);
 

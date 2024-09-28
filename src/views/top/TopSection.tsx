@@ -3,11 +3,11 @@ import Top2Image from "@/assets/top2.jpg";
 import TopImage from "@/assets/top1.jpg";
 import RoseImage from "@/assets/rose.png";
 import Link from "next/link";
-import { SkewAnimation } from "@/components/Animations/SkewAnimation";
-import { TransitionImage } from "@/components/TransitionImage";
-import { FadeAndSlideScrollTriggerAnimation } from "@/components/FadeAndSlideScriollTriggerAnimation";
-import { SkewScrollTriggerAnimation } from "@/components/SkewScrollTriggerAnimation";
-import { FadeAndSlideAnimation } from "@/components/Animations/FadeAndSlideAnimation";
+import { FadeAndSlideAnimation } from "@/libs/Animations/FadeAndSlideAnimation";
+import { SkewScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/SkewScrollTriggerAnimation";
+import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
+import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage";
+
 
 export const TopSection = () => {
     return (
@@ -20,27 +20,20 @@ export const TopSection = () => {
 
                     <div className="w-full flex justify-center">
                         <div className=" inset-0 m-auto text-center -mt-4">
-                            <FadeAndSlideScrollTriggerAnimation>
-                                <h1 className="font-asterdam text-title1">
-                                    Match Bond
-                                </h1>
-                            </FadeAndSlideScrollTriggerAnimation>
+                            <FadeAndSlideAnimation in tag={"h1"} className="font-asterdam text-title1">
+                                Match Bond
+                            </FadeAndSlideAnimation>
 
-                            <SkewScrollTriggerAnimation>
-                                <h3 className="text-title4 mt-5 sm:mt-12 text-font2">
-                                    福山市を中心に活動する結婚相談所
-                                </h3>
+                            <SkewScrollTriggerAnimation tag={"h3"} className="text-title4 mt-5 sm:mt-12 text-font2">
+                                福山市を中心に活動する結婚相談所
                             </SkewScrollTriggerAnimation>
 
-                            <SkewScrollTriggerAnimation >
-                                <p className="text-size2 mt-5 sm:mt-">
-                                    一期一会、ご縁を大切に。
-                                </p>
+                            <SkewScrollTriggerAnimation tag={"p"} className="text-size2 mt-5 sm:mt-">
+                                一期一会、ご縁を大切に。
                             </SkewScrollTriggerAnimation>
-                            <SkewScrollTriggerAnimation >
-                                <p className="text-title3 mt-5 sm:mt-">
-                                    あなたの幸せを応援します。
-                                </p>
+
+                            <SkewScrollTriggerAnimation tag={"p"} className="text-title3 mt-5">
+                                あなたの幸せを応援します。
                             </SkewScrollTriggerAnimation>
 
                             <FadeAndSlideScrollTriggerAnimation transform={{ scale: 1.2, }} >

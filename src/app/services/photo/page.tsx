@@ -1,6 +1,5 @@
 'use client'
-import { FadeAndSlideAnimation } from '@/components/Animations/FadeAndSlideAnimation';
-import { ScrollTrigger } from '@/libs/ScrollTrigger';
+
 import React from 'react';
 import { HighlightMarker } from '@/components/HighlightMarker';
 

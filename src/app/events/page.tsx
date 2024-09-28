@@ -3,15 +3,15 @@
 import { useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import { FadeAndSlideScrollTriggerAnimation } from "@/components/FadeAndSlideScriollTriggerAnimation";
 import { SectionBar } from "@/components/SectionBar";
-import { SkewScrollTriggerAnimation } from "@/components/SkewScrollTriggerAnimation";
-import { eventsMock } from "@/pages/events/eventsMock";
+import { eventsMock } from "@/views/events/eventsMock";
+import { SkewScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimations/SkewScrollTriggerAnimation';
+import { FadeAndSlideScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation';
 
 export default function EventsPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const eventsPerPage = 6;
-    const totalPages = Math.ceil(eventsMock.length / eventsPerPage);
+    const totalviews = Math.ceil(eventsMock.length / eventsPerPage);
 
     const indexOfLastEvent = currentPage * eventsPerPage;
     const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
@@ -64,7 +64,7 @@ export default function EventsPage() {
                 <div className="w-full flex justify-center mt-8">
                     <Pagination
                         currentPage={currentPage}
-                        totalPages={totalPages}
+                        totalviews={totalviews}
                         onPageChange={setCurrentPage}
                     />
                 </div>
@@ -73,9 +73,9 @@ export default function EventsPage() {
     );
 }
 
-const Pagination = ({ currentPage, totalPages, onPageChange }: {
+const Pagination = ({ currentPage, totalviews, onPageChange }: {
     currentPage: number;
-    totalPages: number;
+    totalviews: number;
     onPageChange: (page: number) => void;
 }) => {
     return (
@@ -87,7 +87,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: {
             >
                 前へ
             </button>
-            {[...Array(totalPages)].map((_, index) => (
+            {[...Array(totalviews)].map((_, index) => (
                 <button
                     key={index}
                     onClick={() => onPageChange(index + 1)}
@@ -98,8 +98,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: {
                 </button>
             ))}
             <button
-                onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
-                disabled={currentPage === totalPages}
+                onClick={() => onPageChange(Math.min(totalviews, currentPage + 1))}
+                disabled={currentPage === totalviews}
                 className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50"
             >
                 次へ

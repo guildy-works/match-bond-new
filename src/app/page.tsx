@@ -5,11 +5,11 @@ import KiraKira from "../../public/kirakira.png";
 
 import { ScrollIndicator } from "@/components/ScrollIndicatior";
 import { SectionBar } from "@/components/SectionBar";
-import { TopSection } from "@/pages/top/TopSection";
-import { NewsSection } from "@/pages/top/NewsSection";
+import { TopSection } from "@/views/top/TopSection";
+import { NewsSection } from "@/views/top/NewsSection";
 import { ScrollContainer } from "@/libs/ScrollTrigger";
-import { EventsSection } from "@/pages/top/EventsSection";
-import AboutSection from "@/pages/top/AboutSection";
+import { EventsSection } from "@/views/top/EventsSection";
+import AboutSection from "@/views/top/AboutSection";
 
 export default function Home() {
     return (

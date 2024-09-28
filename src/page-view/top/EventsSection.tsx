@@ -1,9 +1,10 @@
-import { FadeAndSlideScrollTriggerAnimation } from "@/components/FadeAndSlideScriollTriggerAnimation";
+
 import { LinkButton } from "@/components/LinkButton";
 import { SectionBar } from "@/components/SectionBar"
 import Link from "next/link";
-import { eventsMock } from "../events/eventsMock";
 import { HighlightMarker } from "@/components/HighlightMarker";
+import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
+import { eventsMock } from "@/pages/events/eventsMock";
 
 export const EventsSection = () => {
     return (

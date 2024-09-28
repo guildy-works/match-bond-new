@@ -1,5 +1,5 @@
+import { FadeAndSlideAnimation } from "@/libs/Animations/FadeAndSlideAnimation";
 import { ScrollTrigger } from "@/libs/ScrollTrigger";
-import { FadeAndSlideAnimation } from "./Animations/FadeAndSlideAnimation";
 
 export const HighlightMarker = ({ children, }: {
     children: React.ReactNode,

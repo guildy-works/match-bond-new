@@ -1,5 +1,7 @@
-import React, { CSSProperties, ReactNode, useEffect, useState } from "react";
-import { Transition, TransitionStatus } from 'react-transition-group';
+import type { CSSProperties, ReactNode} from "react";
+import React, { useEffect, useState } from "react";
+import type { TransitionStatus } from "react-transition-group";
+import { Transition } from "react-transition-group";
 
 export interface TransitionProps {
     children?: ReactNode | ((status: TransitionStatus) => ReactNode);
@@ -8,6 +10,7 @@ export interface TransitionProps {
         enter?: number | undefined;
         exit?: number | undefined
     };
+    duration?: number;
     in?: boolean;
     className?: string;
     style?: CSSProperties;

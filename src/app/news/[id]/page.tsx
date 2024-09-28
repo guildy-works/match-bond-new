@@ -4,11 +4,11 @@ import Image from "next/image";
 import KiraKira from "@/assets/kirakira.png";
 
 import { ScrollIndicator } from "@/components/ScrollIndicatior";
-import { TopSection } from "@/pages/top/TopSection";
-import { NewsSection } from "@/pages/top/NewsSection";
+import { TopSection } from "@/views/top/TopSection";
+import { NewsSection } from "@/views/top/NewsSection";
 import { ScrollContainer } from "@/libs/ScrollTrigger";
-import { EventsSection } from "@/pages/top/EventsSection";
-import { eventsMock } from "@/pages/events/eventsMock";
+import { EventsSection } from "@/views/top/EventsSection";
+import { eventsMock } from "@/views/events/eventsMock";
 
 export function generateStaticParams() {
     const events = eventsMock// イベントデータを取得する関数

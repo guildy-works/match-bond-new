@@ -1,6 +1,6 @@
-import { Interpolation, Theme } from "@emotion/react";
 import clsx from "clsx";
-import React, { CSSProperties } from "react";
+import type { CSSProperties } from "react";
+import React from "react";
 import { ScrollTrigger } from "./ScrollTrigger";
 
 interface AnimationStateStyle<T> {
@@ -55,10 +55,10 @@ export const ScrollTriggerTransition = (props: ScrollTriggerTransisionProps) => 
     >
         {state => (
             <div
-                className={clsx([props.className, (props.animationClassName ?? {})[state]])}
+                className={clsx([props.className, (props.animationClassName ?? {} as any)[state]])}
                 style={{
                     ...props.style,
-                    ...((props.animationStyle ?? {})[state]),
+                    ...((props.animationStyle ?? {} as any)[state]),
                     ...{
                         transition: `all ${props.duration ?? 800}ms ${props.easing ?? "cubic-bezier(0.3, 0.13, 0.09, 0.84)"}`
                     },

@@ -1,6 +1,6 @@
-import React, { CSSProperties, ReactNode } from "react";
-import { FadeAndSlideAnimation } from "./Animations/FadeAndSlideAnimation";
-import { ScrollTrigger } from "@/libs/ScrollTrigger";
+import React, { CSSProperties, ElementType, ReactNode } from "react";
+import { ScrollTrigger } from "../ScrollTrigger/ScrollTrigger";
+import { FadeAndSlideAnimation } from "../Animations/FadeAndSlideAnimation";
 
 interface FadeAndSlideScrollTriggerAnimationProps {
     children: ReactNode;
@@ -20,9 +20,10 @@ interface FadeAndSlideScrollTriggerAnimationProps {
     className?: string;
     innerClassName?: string;
     innerStyle?: CSSProperties;
+    tag?: ElementType;
 }
 
-export const FadeAndSlideScrollTriggerAnimation = ({ children, delay, forceIn, transform, style, className,innerClassName,innerStyle}: FadeAndSlideScrollTriggerAnimationProps) => {
+export const FadeAndSlideScrollTriggerAnimation = ({ tag, children, delay, forceIn, transform, style, className, innerClassName, innerStyle }: FadeAndSlideScrollTriggerAnimationProps) => {
     return (
         <ScrollTrigger
             forceIn={forceIn}
@@ -33,6 +34,7 @@ export const FadeAndSlideScrollTriggerAnimation = ({ children, delay, forceIn, t
         >
             {state =>
                 <FadeAndSlideAnimation
+                    tag={tag}
                     in={state === "entered"}
                     delay={delay}
                     transform={transform}

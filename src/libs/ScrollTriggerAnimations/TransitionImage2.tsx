@@ -1,14 +1,15 @@
-import { ScrollTrigger } from "@/libs/ScrollTrigger";
-import Image, { StaticImageData } from "next/image";
-import { CSSProperties } from "react";
-import React, { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import React from "react";
+import Image, { StaticImageData, } from "next/image";
+import { ScrollTrigger } from "../ScrollTrigger/ScrollTrigger";
+
 
 export const lerp = (x: number, y: number, t: number) => {
     return (1 - t) * x + t * y;
 };
 
 interface TransitionImageProps {
-    src: string | StaticImageData;
+    src: StaticImageData;
     alt: string;
     parallaxSlideLength?: number;
     scale?: {
@@ -17,9 +18,11 @@ interface TransitionImageProps {
     }
     style?: CSSProperties;
     className?: string;
+    forceIn?: boolean;
+    imgClassName?: string;
 }
 
-export const TransitionImage = (props: TransitionImageProps) => {
+export const TransitionImage2 = (props: TransitionImageProps) => {
     const { scale } = props;
     const range = Math.abs(props.parallaxSlideLength ?? 50);
     const half = range * 0.5;
@@ -33,6 +36,7 @@ export const TransitionImage = (props: TransitionImageProps) => {
     return (
         <ScrollTrigger
             once
+            forceIn={props.forceIn}
             scrollEndOffset={"100% + 40vh"}
             scrollStartOffset="-20vh"
             style={props.style}
@@ -44,7 +48,6 @@ export const TransitionImage = (props: TransitionImageProps) => {
                         transition: "all 3s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
                         opacity: state === "entered" ? 1 : 0,
                         position: "relative",
-                        overflow: "hidden",
                         width: "100%",
                         height: "100%",
                         transform: state === "entered" ? "translateY(0)" : "translateY(30px)",
@@ -58,12 +61,13 @@ export const TransitionImage = (props: TransitionImageProps) => {
                             <Image
                                 src={props.src}
                                 alt={props.alt}
+                                className={props.imgClassName}
                                 style={{
                                     height: "100%",
                                     width: "100%",
                                     objectFit: "cover",
                                     transition: "all 2.4s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                                    transform: state === "entered" ? `scale(1.3)` : "scale(1.5)",
+                                    transform: state === "entered" ? "scale(1.3)" : "scale(1.5)",
                                 }}
                             />
                         </div>
@@ -117,7 +121,7 @@ export const TransitionStaticImage = (props: TransitionStaticImageProps) => {
                                 width: "100%",
                                 objectFit: "cover",
                                 transition: "all 2.4s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                                transform: state === "entered" ? `scale(1.3)` : "scale(1.5)",
+                                transform: state === "entered" ? "scale(1.3)" : "scale(1.5)",
                             })}
                         </div>
                     </div>
