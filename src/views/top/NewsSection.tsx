@@ -16,7 +16,7 @@ export const NewsSection = () => {
     }, [])
 
     return (
-        <div className="mx-auto px-4 sm:px-0 w-full max-w-5xl">
+        <div className="mx-auto px-4 md:px-0 w-full max-w-5xl ">
             <FadeAndSlideScrollTriggerAnimation transform={{ translate: { x: "-10vw" } }}>
                 <SectionBar text="News" />
             </FadeAndSlideScrollTriggerAnimation>
@@ -29,7 +29,7 @@ export const NewsSection = () => {
                         <FadeAndSlideScrollTriggerAnimation key={index}>
                             <li className="py-4 flex justify-between items-center">
                                 <span className="text-grey2">{item.publishedAt.getMonth() + 1}.{item.publishedAt.getDate()}</span>
-                                <Link className="ml-4" href="">{item.title}</Link>
+                                <Link className="ml-4" href={"/news/" + item.id}>{item.title}</Link>
                             </li>
                         </FadeAndSlideScrollTriggerAnimation>
                     ))}

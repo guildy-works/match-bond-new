@@ -27,10 +27,12 @@ const EventsPage: React.FC = () => {
 
     return (
         <div className="w-full flex flex-col justify-center bg-color4 p-3 sm:p-6 md:p-8">
-            <div className="mx-auto">
-                <FadeAndSlideScrollTriggerAnimation>
+                <FadeAndSlideScrollTriggerAnimation className='mx-auto'>
                     <h3 className="text-title2 mt-4 sm:mt-8 mb-6">イベント情報</h3>
                 </FadeAndSlideScrollTriggerAnimation>
+
+            <div className="mx-auto min-h-[50vh]">
+
 
                 <div className="mt-3 sm:mt-5 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {currentEvents.map((event) => (

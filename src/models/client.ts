@@ -5,7 +5,32 @@ export const client = createClient({
     apiKey: "y4QXFFWvZgVWMHbqyRmoRCmNwxvqkshmYXmL",
 });
 
-export const fetchNewses = async () :Promise<News[]>=> {
+export const fetchNews = async (id: string): Promise<News> => {
+    const response = await client.get<{
+        id: string;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+        revisedAt: string;
+        title: string;
+        content: string;
+    }>({
+        endpoint: "news",
+        contentId: id,
+    });
+
+    return {
+        id: response.id,
+        createdAt: new Date(response.createdAt),
+        updatedAt: new Date(response.updatedAt),
+        publishedAt: new Date(response.publishedAt),
+        revisedAt: new Date(response.revisedAt),
+        title: response.title,
+        content: response.content,
+    }
+}
+
+export const fetchNewses = async (): Promise<News[]> => {
     const response = await client.getList<{
         id: string;
         createdAt: string;
@@ -16,6 +41,7 @@ export const fetchNewses = async () :Promise<News[]>=> {
         body: string;
     }>({
         endpoint: "news",
+        
     });
 
     return response.contents.map<News>(content => ({
@@ -25,7 +51,6 @@ export const fetchNewses = async () :Promise<News[]>=> {
         publishedAt: new Date(content.publishedAt),
         revisedAt: new Date(content.revisedAt),
         title: content.title,
-        body: content.body,
     }))
 }
 
@@ -36,5 +61,5 @@ export type News = {
     publishedAt: Date;
     revisedAt: Date;
     title: string;
-    body: string;
+    content?: string;
 };

@@ -42,7 +42,7 @@ export const FadeAndSlideAnimation = (props: FadeAndSlideAnimationProps) => {
         {state => {
 
             return <Tag
-                className={clsx(props.className, "size-full")}
+                className={clsx(props.className)}
                 style={{
                     ...{
                         transformOrigin: transform?.transformOrigin,
