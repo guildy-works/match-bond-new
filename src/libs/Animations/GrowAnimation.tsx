@@ -1,5 +1,6 @@
-import { ScrollTriggerTransition, Transition, TransitionProps } from "../../lib/ScrollTrigger";
+
 import React, { ReactNode } from "react";
+import { Transition, TransitionProps } from "../ScrollTrigger";
 
 interface GrowAnimationProps extends TransitionProps {
     transform?: {

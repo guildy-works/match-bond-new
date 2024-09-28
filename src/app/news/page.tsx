@@ -8,7 +8,7 @@ import { fetchNewses, News } from '@/models/client';
 import { SectionType1 } from '@/components/SectionType1';
 import clsx from 'clsx';
 
-export default function EventsPage() {
+export default function NewsPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const eventsPerPage = 6;
     // const totalviews = Math.ceil(eventsMock.length / eventsPerPage);
@@ -51,7 +51,7 @@ export default function EventsPage() {
     );
 }
 
-export const Section1Title = ({ title, subTitle, className, innerClassName }: {
+const Section1Title = ({ title, subTitle, className, innerClassName }: {
     title: string,
     subTitle: string,
     className?: string,
@@ -62,7 +62,7 @@ export const Section1Title = ({ title, subTitle, className, innerClassName }: {
     </FadeAndSlideScrollTriggerAnimation>
 )
 
-export const NewsItem = (props: {
+const NewsItem = (props: {
     news: News
 }) => {
     const { news } = props;
@@ -79,7 +79,7 @@ export const NewsItem = (props: {
 
                 <div className="md:w-2/3 px-4">
                     <h4 className="text-xl font-bold mt-2 mb-2">{news.title}</h4>
-                    <Link href={"news/"+ props.news.id} className="text-color3 hover:underline inline-block">
+                    <Link href={"news/" + props.news.id} className="text-color3 hover:underline inline-block">
                         もっと見る
                     </Link>
                 </div>
