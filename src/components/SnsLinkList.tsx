@@ -1,4 +1,4 @@
-import Line from '@/assets/sns/Line.svg'
+import Line from '@/assets/sns/LINE.svg'
 import Instagram from '@/assets/sns/Instagram.svg'
 import X from '@/assets/sns/X.svg'
 import Image from 'next/image'
