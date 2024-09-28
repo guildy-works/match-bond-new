@@ -64,7 +64,7 @@ export default function AboutSection() {
                     </FadeAndSlideScrollTriggerAnimation>
 
                     <div className="mt-4 md:mt-6 ml-auto w-full sm:w-auto">
-                        <LinkButton href="/about" title="VIEW About" subTitle="Match Bondの想い">
+                        <LinkButton href="/about" title="VIEW About" subTitle="Match-Bondの想い">
 
                         </LinkButton>
                     </div>

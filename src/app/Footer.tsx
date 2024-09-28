@@ -9,7 +9,7 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* ロゴと会社情報 */}
                     <div className="space-y-4 flex flex-col items-center">
-                        <h2 className="text-title2 text-color3">Match Bond</h2>
+                        <h2 className="text-title2 text-color3">Match-Bond</h2>
                         <p className="text-gray-600">
                             婚活って楽しい
                         </p>
@@ -35,7 +35,7 @@ export const Footer = () => {
                 {/* コピーライト */}
                 <div className="w-full border-t border-gray-300 mt-12 pt-8">
                     <p className="text-center text-gray-600">
-                        © {new Date().getFullYear()} Match Bond. All rights reserved.
+                        © {new Date().getFullYear()} Match-Bond. All rights reserved.
                     </p>
                 </div>
             </div>

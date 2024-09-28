@@ -8,7 +8,7 @@ export const EventIntroduceSection = () => (
         <div className="max-w-5xl mx-auto px-4 py-12 relative">
             {/* 背景テキスト */}
             <div className="font-asterdam absolute top-40 left-0 right-0 text-[96px] w-[680px] text-color2 -rotate-12 font-thin ">
-                Match Bond
+                Match-Bond
             </div>
 
             {/* メインコンテンツ */}
