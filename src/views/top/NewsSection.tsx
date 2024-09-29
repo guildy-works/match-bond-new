@@ -29,7 +29,7 @@ export const NewsSection = ({ news }: { news: NewsMeta[] }) => {
                 <div className="flex-1" />
 
                 <FadeAndSlideScrollTriggerAnimation className="w-full sm:w-auto">
-                    <LinkButton title="VIEW MORE" subTitle="お知らせ一覧" href=""></LinkButton>
+                    <LinkButton title="VIEW MORE" subTitle="お知らせ一覧" href="/news"></LinkButton>
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
 

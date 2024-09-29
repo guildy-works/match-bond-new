@@ -25,7 +25,7 @@ export default async function Page(props: { params: { id: string } }) {
                 <div dangerouslySetInnerHTML={{ __html: news?.body ?? "" }} className='mt-8 flex flex-col gap-2 sm:gap-6 mb-auto'>
                 </div>
 
-                <Link href='/news' className='mt-8 px-6 bg-black text-white py-4 rounded-xl font-semibold hover:bg-black/60 transition duration-300 flex'>一覧に戻る</Link>
+                <Link href='/events' className='mt-8 px-6 bg-black text-white py-4 rounded-xl font-semibold hover:bg-black/60 transition duration-300 flex'>一覧に戻る</Link>
             </div>
         </div>
     )
