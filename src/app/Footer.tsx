@@ -1,11 +1,15 @@
 import Link from "next/link";
 import { menuItems } from "./Header";
 import { SnsLinkList } from "@/components/SnsLinkList";
+import Logo from "@/assets/logo.png";
+import Image from "next/image";
 
 export const Footer = () => {
     return (
         <footer className="bg-color1 pt-16 pb-8 w-full">
-            <div className="mx-auto px-4  w-full">
+            <Image className="mx-auto" src={Logo} alt="Match-Bond" width={160} height={160} />
+
+            <div className="mx-auto px-4  w-full mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* ロゴと会社情報 */}
                     <div className="space-y-4 flex flex-col items-center">
@@ -19,7 +23,7 @@ export const Footer = () => {
 
                     {/* サイトマップ */}
                     <div className="md:col-span-2 flex flex-col items-center">
-                        <h2 className="text-title3 font-bold text-gray-800 mb-6">サイトマップ</h2>
+                        <h2 className="text-title3 mb-6">サイトマップ</h2>
                         <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                             {menuItems.map((item) => (
                                 <li key={item.label}>

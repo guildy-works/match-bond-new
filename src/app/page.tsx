@@ -12,8 +12,11 @@ import { EventsSection } from "@/views/top/EventsSection";
 import AboutSection from "@/views/top/AboutSection";
 import { ContactSection } from "@/views/top/ContactSection";
 import { ServiceSection } from "@/views/top/ServiceSection";
+import { fetchAllNewses, News } from "@/models/client";
 
-export default function Home() {
+export default async function Home() {
+    const newses = await fetchAllNewses();
+
     return (
         <>
             <title>{"Match-Bond 福山"}</title>
@@ -23,7 +26,7 @@ export default function Home() {
             <AboutSection />
 
             <div className="mt-4 sm:mt-12 lg:mt-24 w-full flex justify-center">
-                <NewsSection />
+                <NewsSection news={newses} />
             </div>
 
             <ServiceSection />

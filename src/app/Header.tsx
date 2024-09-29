@@ -4,7 +4,9 @@ import { Description, Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@
 import { MdClose, MdMenu } from 'react-icons/md';
 import { SnsLinkList } from '@/components/SnsLinkList';
 import { FadeAndSlideAnimation } from '@/libs/Animations/FadeAndSlideAnimation';
-
+import Logo from "@/assets/logo.png";
+import Image from "next/image";
+import { useScrollState } from '@/libs/ScrollTrigger';
 
 export const menuItems = [
     { href: "/", label: "TOP" },
@@ -17,14 +19,17 @@ export const menuItems = [
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    const state = useScrollState()
 
     return (
         <>
             <header className="flex items-center sticky top-0 mt-0 md:mt-48 bg-white/60 backdrop-blur-lg z-20">
+                {state.scrollTop > 0 && (
+                    <Link href="/">
+                        <h1 className='font-asterdam ml-3 text-color2 text-[26px] font-extralight whitespace-nowrap'>Match Bond</h1>
+                    </Link>
+                )
+                }
                 {/* Desktop */}
                 <nav className="hidden w-full md:flex gap-6 justify-end py-8 px-20">
 
@@ -124,6 +129,7 @@ const Drawer = ({ isOpen, setIsOpen, children }: React.PropsWithChildren<Props>)
                             </FadeAndSlideAnimation>
                         ))}
                     </nav>
+                    <Image className="mb-8" src={Logo} alt="Match-Bond" width={120} height={120} />
 
                     <SnsLinkList />
 

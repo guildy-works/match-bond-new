@@ -1,4 +1,4 @@
-import { useScrollContext } from "./contexts";
+import { type ScrollState, useScrollContext, useScrollState } from "./contexts";
 import { ScrollContainer } from "./ScrollContainer";
 import { ScrollTrigger } from "./ScrollTrigger";
 import { ScrollTriggerTransition } from "./ScrollTriggerTransition";
@@ -12,5 +12,8 @@ export {
     useScrollContext,
     ScrollTriggerTransition,
     ScrollTrigger,
-    TransitionTrigger as Transition
+    TransitionTrigger as Transition,
+
+    ScrollState,
+    useScrollState,
 };

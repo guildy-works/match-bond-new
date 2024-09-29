@@ -23,22 +23,28 @@ export const TopSection = () => {
                     </FadeAndSlideAnimation>
 
                     <div className="w-full flex justify-center">
-                        <div className=" inset-0 m-auto text-center -mt-4">
-                            <FadeAndSlideAnimation in tag={"h1"} className="font-asterdam text-title1">
+                        <div className=" inset-0 m-auto flex flex-col -mt-4">
+                            <FadeAndSlideAnimation in tag={"h1"} className="font-asterdam text-title1 mx-auto">
                                 Match Bond
                             </FadeAndSlideAnimation>
 
-                            <SkewScrollTriggerAnimation tag={"h3"} className="text-title4 mt-5 sm:mt-12 text-font2">
-                                福山市を中心に活動する結婚相談所
-                            </SkewScrollTriggerAnimation>
+                            <div className="mx-auto">
 
-                            <SkewScrollTriggerAnimation tag={"p"} className="text-size2 mt-5 sm:mt-">
-                                一期一会、ご縁を大切に。
-                            </SkewScrollTriggerAnimation>
+                                <SkewScrollTriggerAnimation tag={"h3"} className="text-title4 mt-5 sm:mt-12 text-font2">
+                                    広島県福山市を中心に
+                                </SkewScrollTriggerAnimation>
+                                <SkewScrollTriggerAnimation tag={"h3"} className="text-title4 mt-4新着情報・お知らせ text-font2">
+                                    活動する結婚相談所
+                                </SkewScrollTriggerAnimation>
 
-                            <SkewScrollTriggerAnimation tag={"p"} className="text-title3 mt-5">
-                                あなたの幸せを応援します。
-                            </SkewScrollTriggerAnimation>
+                                <SkewScrollTriggerAnimation tag={"p"} className="text-size2 mt-5">
+                                    一期一会、ご縁を大切に。
+                                </SkewScrollTriggerAnimation>
+
+                                <SkewScrollTriggerAnimation tag={"p"} className="text-title3 mt-5">
+                                    あなたの幸せを応援します。
+                                </SkewScrollTriggerAnimation>
+                            </div>
 
                             <FadeAndSlideScrollTriggerAnimation transform={{ scale: 1.2, }} >
                                 <Image src={RoseImage} alt="rose" className="object-contain" style={{ maxHeight: "240px", maxWidth: "max(280px, 100%)" }} />
