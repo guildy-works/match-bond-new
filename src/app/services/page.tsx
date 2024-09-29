@@ -30,18 +30,21 @@ export default () => {
             <title>{"Match-Bond 福山|サービス料金プラン"}</title>
             <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
 
-            {/* ヒーローセクション */}
-            <FadeAndSlideScrollTriggerAnimation >
-                <section className="px-4">
-                    <div className="container mx-auto ">
-                        <SectionBar text='Services' />
 
+            <section className="px-4">
+                <div className="container mx-auto ">
+                    <FadeAndSlideScrollTriggerAnimation forceIn>
+                        <SectionBar text='Services' />
+                    </FadeAndSlideScrollTriggerAnimation>
+
+                    <FadeAndSlideScrollTriggerAnimation >
                         <p className="text-title3 mt-8 mb-8">
                             あなたの人生に新しい出会いと可能性を
                         </p>
-                    </div>
-                </section>
-            </FadeAndSlideScrollTriggerAnimation>
+                    </FadeAndSlideScrollTriggerAnimation>
+                </div>
+            </section>
+
 
 
             {/* サービス概要 */}
