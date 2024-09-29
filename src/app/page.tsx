@@ -1,13 +1,8 @@
 'use client'
 
-import Image from "next/image";
-import KiraKira from "../../public/kirakira.png";
-
 import { ScrollIndicator } from "@/components/ScrollIndicatior";
-import { SectionBar } from "@/components/SectionBar";
 import { TopSection } from "@/views/top/TopSection";
 import { NewsSection } from "@/views/top/NewsSection";
-import { ScrollContainer } from "@/libs/ScrollTrigger";
 import { EventsSection } from "@/views/top/EventsSection";
 import AboutSection from "@/views/top/AboutSection";
 import { ContactSection } from "@/views/top/ContactSection";

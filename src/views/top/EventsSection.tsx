@@ -1,14 +1,12 @@
 import { LinkButton } from "@/components/LinkButton";
-import { SectionBar } from "@/components/SectionBar"
-import Link from "next/link";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
 import { EventIntroduceSection } from "../events/EventIntroduceSection";
-import { EventData, fetchEvents } from "@/models/fetchEvents";
+import { EventMetaData, fetchEvents } from "@/models/fetchEvents";
 import { useEffect, useState } from "react";
 import { EventCard } from "../events/EventCard";
 
 export const EventsSection = () => {
-    const [eventItems, setEvents] = useState<EventData[]>([])
+    const [eventItems, setEvents] = useState<EventMetaData[]>([])
 
     useEffect(() => {
         fetchEvents().then((events) => {
