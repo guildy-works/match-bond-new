@@ -30,7 +30,7 @@ export const fetchNews = async (id: string): Promise<News> => {
     }
 }
 
-export const fetchNewses = async (): Promise<News[]> => {
+export const fetchAllNewses = async (): Promise<NewsMeta[]> => {
     const response = await client.getList<{
         id: string;
         createdAt: string;
@@ -38,21 +38,28 @@ export const fetchNewses = async (): Promise<News[]> => {
         publishedAt: string;
         revisedAt: string;
         title: string;
-        body: string;
+        content: string;
     }>({
         endpoint: "news",
-        
+        queries: {
+            limit: 100,
+            fields: "id,publishedAt,title",
+        }
     });
 
-    return response.contents.map<News>(content => ({
+    return response.contents.map<NewsMeta>(content => ({
         id: content.id,
-        createdAt: new Date(content.createdAt),
-        updatedAt: new Date(content.updatedAt),
         publishedAt: new Date(content.publishedAt),
-        revisedAt: new Date(content.revisedAt),
         title: content.title,
     }))
 }
+
+
+export type NewsMeta= {
+    id: string;
+    publishedAt: Date;
+    title: string;
+};
 
 export type News = {
     id: string;

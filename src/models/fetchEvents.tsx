@@ -31,7 +31,7 @@ export const fetchEvent = async (id: string): Promise<EventData> => {
     }
 }
 
-export const fetchEvents = async (): Promise<EventData[]> => {
+export const fetchEvents = async (): Promise<EventMetaData[]> => {
     const response = await client.getList<{
         id: string;
         createdAt: string;
@@ -45,31 +45,35 @@ export const fetchEvents = async (): Promise<EventData[]> => {
         summary?: string;
     }>({
         endpoint: "events",
+        queries: {
+            limit: 100,
+            fields: "id,publishedAt,title,summary,thumbnail,date",
+        }
     });
 
-    return response.contents.map<EventData>(content => ({
+    return response.contents.map<EventMetaData>(content => ({
         id: content.id,
-        createdAt: new Date(content.createdAt),
-        updatedAt: new Date(content.updatedAt),
         publishedAt: new Date(content.publishedAt),
-        revisedAt: new Date(content.revisedAt),
         title: content.title,
-        body: content.body,
         date: content.date ? new Date(content.date) : undefined,
         thumbnail: content.thumbnail,
         summary: content.summary,
     }))
 }
 
-export type EventData = {
+export type EventMetaData = {
     id: string;
-    createdAt: Date;
-    updatedAt: Date;
     publishedAt: Date;
-    revisedAt: Date;
     date?: Date;
     title?: string;
     thumbnail?: { url: string, width: number, height: number };
-    body?: string;
     summary?: string;
+};
+
+export type EventData = EventMetaData & {
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
+    revisedAt: Date;
+    body?: string;
 };

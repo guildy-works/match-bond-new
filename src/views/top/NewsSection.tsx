@@ -1,7 +1,7 @@
 import { LinkButton } from "@/components/LinkButton";
 import { SectionBar } from "@/components/SectionBar"
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
-import { fetchNewses, News } from "@/models/client";
+import { fetchAllNewses, News } from "@/models/client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -10,9 +10,9 @@ export const NewsSection = () => {
     const [newsItems, setNewsItems] = useState<News[]>([])
 
     useEffect(() => {
-        fetchNewses().then((news) => {
-            setNewsItems(news)
-        })
+        // fetchAllNewses().then((news) => {
+        //     setNewsItems(news)
+        // })
     }, [])
 
     return (

@@ -4,24 +4,16 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { FadeAndSlideScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation';
-import { fetchNewses, News } from '@/models/client';
+import { fetchAllNewses, News, NewsMeta } from '@/models/client';
 import { SectionType1 } from '@/components/SectionType1';
 import clsx from 'clsx';
 
-export default function NewsPage() {
+export default async function NewsPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const eventsPerPage = 6;
     // const totalviews = Math.ceil(eventsMock.length / eventsPerPage);
 
-    const [newses, setNewses] = useState<News[]>([])
-
-    useEffect(() => {
-        fetchNewses().then((newses) => {
-            setNewses(newses)
-        })
-    }, [])
-
-
+    const newses = await fetchAllNewses();
 
     const indexOfLastEvent = currentPage * eventsPerPage;
     const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
@@ -63,7 +55,7 @@ const Section1Title = ({ title, subTitle, className, innerClassName }: {
 )
 
 const NewsItem = (props: {
-    news: News
+    news: NewsMeta
 }) => {
     const { news } = props;
 

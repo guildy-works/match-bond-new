@@ -1,9 +1,9 @@
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
-import { EventData } from "@/models/fetchEvents";
+import { EventData, EventMetaData } from "@/models/fetchEvents";
 import Link from "next/link";
 
 interface EventCardProps {
-    event: EventData;
+    event: EventMetaData;
 }
 
 export const EventCard: React.FC<EventCardProps> = ({ event }) => {

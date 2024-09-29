@@ -7,17 +7,11 @@ import { FadeAndSlideScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimatio
 import { EventData, fetchEvents } from '@/models/fetchEvents';
 import { EventCard } from '@/views/events/EventCard';
 
-const EventsPage: React.FC = () => {
+const EventsPage: React.FC = async () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const eventsPerPage = 6;
 
-    const [eventsMock, setEventsMock] = useState<EventData[]>([])
-    useEffect(() => {
-        fetchEvents().then((events) => {
-            setEventsMock(events)
-        })
-    }, [])
-
+    const eventsMock = await fetchEvents();
 
     const totalPages = Math.ceil(eventsMock.length / eventsPerPage);
 
@@ -44,13 +38,13 @@ const EventsPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="w-full flex justify-center mt-8">
+            {/* <div className="w-full flex justify-center mt-8">
                 <Pagination
                     currentPage={currentPage}
                     totalPages={totalPages}
                     onPageChange={setCurrentPage}
                 />
-            </div>
+            </div> */}
         </div>
     );
 }
