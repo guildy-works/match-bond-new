@@ -1,4 +1,3 @@
-
 import { fetchEvent, fetchEvents } from "@/models/fetchEvents";
 import Link from "next/link";
 

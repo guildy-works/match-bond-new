@@ -4,20 +4,43 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { FadeAndSlideScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation';
-import { EventData, fetchEvents } from '@/models/fetchEvents';
+import { EventData, EventMetaData, fetchEvents } from '@/models/fetchEvents';
 import { EventCard } from '@/views/events/EventCard';
 
-const EventsPage: React.FC = async () => {
+const EventsPage: React.FC =  () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const eventsPerPage = 6;
 
-    const eventsMock = await fetchEvents();
+    const [events, setEvents] = useState<EventMetaData[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    const totalPages = Math.ceil(eventsMock.length / eventsPerPage);
+
+    const totalPages = Math.ceil(events.length / eventsPerPage);
 
     const indexOfLastEvent = currentPage * eventsPerPage;
     const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
-    const currentEvents = eventsMock.slice(indexOfFirstEvent, indexOfLastEvent);
+    const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
+
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setIsLoading(true);
+                const result = await fetchEvents();
+                setEvents(result);
+            } catch (err: any) {
+                setError(err.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchNews();
+    }, []);
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
 
     return (
         <div className="w-full flex flex-col justify-center bg-color4 p-3 sm:p-6 md:p-8">

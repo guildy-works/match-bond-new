@@ -8,15 +8,36 @@ import { fetchAllNewses, News, NewsMeta } from '@/models/client';
 import { SectionType1 } from '@/components/SectionType1';
 import clsx from 'clsx';
 
-export default async function NewsPage() {
+export default function NewsPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const eventsPerPage = 6;
     // const totalviews = Math.ceil(eventsMock.length / eventsPerPage);
 
-    const newses = await fetchAllNewses();
-
     const indexOfLastEvent = currentPage * eventsPerPage;
     const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+
+    const [newses, setNewses] = useState<NewsMeta[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setIsLoading(true);
+                const result = await fetchAllNewses();
+                setNewses(result);
+            } catch (err: any) {
+                setError(err.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchNews();
+    }, []);
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
 
     return (
         <SectionType1 className="bg-color8">

@@ -9,6 +9,7 @@ import '@splidejs/react-splide/css';
 import { Footer } from "./Footer";
 import { Head } from "next/document";
 import { Metadata } from "next";
+import { useState } from "react";
 
 
 export default function RootLayout({

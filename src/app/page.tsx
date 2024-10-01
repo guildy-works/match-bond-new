@@ -7,10 +7,36 @@ import { EventsSection } from "@/views/top/EventsSection";
 import AboutSection from "@/views/top/AboutSection";
 import { ContactSection } from "@/views/top/ContactSection";
 import { ServiceSection } from "@/views/top/ServiceSection";
-import { fetchAllNewses, News } from "@/models/client";
+import { fetchAllNewses, News, NewsMeta } from "@/models/client";
+import { EventMetaData, fetchEvents } from "@/models/fetchEvents";
+import { useEffect, useState } from "react";
 
-export default async function Home() {
-    const newses = await fetchAllNewses();
+export default  function Home() {
+
+    
+    const [events, setEvents] = useState<EventMetaData[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const [newses, setNewses] = useState<NewsMeta[]>([]);
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setIsLoading(true);
+                const result = await fetchEvents();
+                setEvents(result);
+            } catch (err: any) {
+                setError(err.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchNews();
+    }, []);
+
+    if (error) return <div>Error: {error}</div>;
 
     return (
         <>
@@ -27,7 +53,7 @@ export default async function Home() {
             <ServiceSection />
 
             <div className="w-full flex justify-center bg-color4 p-3 sm:p-6 md:p-8">
-                <EventsSection />
+                <EventsSection events={events} />
             </div>
 
             <ContactSection />
