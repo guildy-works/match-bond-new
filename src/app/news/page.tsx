@@ -7,6 +7,8 @@ import { FadeAndSlideScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimatio
 import { fetchAllNewses, News, NewsMeta } from '@/models/client';
 import { SectionType1 } from '@/components/SectionType1';
 import clsx from 'clsx';
+import { Loading } from '@/components/Loading';
+import Head from 'next/head';
 
 export default function NewsPage() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -23,7 +25,6 @@ export default function NewsPage() {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                setIsLoading(true);
                 const result = await fetchAllNewses();
                 setNewses(result);
             } catch (err: any) {
@@ -36,28 +37,35 @@ export default function NewsPage() {
         fetchNews();
     }, []);
 
-    if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
     return (
         <SectionType1 className="bg-color8">
+            <Head>
+                <title>{`Match-Bond 福山|News""}`}</title>
+                <meta name="description" content="広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。" />
+            </Head>
+
             <div className="justify-start flex flex-col items-start gap-1 sm:gap-2 md:gap-3 w-full">
                 <Section1Title title="News" subTitle="　　" innerClassName="!bg-color8" />
 
                 <div className="mx-auto w-full min-h-[50vh]">
-                    <FadeAndSlideScrollTriggerAnimation>
-                        <h3 className="text-title4 mt-4 sm:mt-8">新着情報・お知らせ</h3>
-                    </FadeAndSlideScrollTriggerAnimation>
-
-                    <section className="w-full grid grid-cols-1 md:grid-cols-2 mt-4 gap-4 sm:gap-6 md:gap-8">
-                        {newses.map((item, index) => (
-                            <FadeAndSlideScrollTriggerAnimation key={index} innerClassName="size-full">
-                                <NewsItem news={item} />
-                            </FadeAndSlideScrollTriggerAnimation>
-                        ))}
-                    </section>
-
-
+                    {
+                        isLoading
+                            ? <Loading />
+                            : <>
+                                <FadeAndSlideScrollTriggerAnimation>
+                                    <h3 className="text-title4 mt-4 sm:mt-8">新着情報・お知らせ</h3>
+                                </FadeAndSlideScrollTriggerAnimation>
+                                <section className="w-full grid grid-cols-1 md:grid-cols-2 mt-4 gap-4 sm:gap-6 md:gap-8">
+                                    {newses.map((item, index) => (
+                                        <FadeAndSlideScrollTriggerAnimation key={index} innerClassName="size-full">
+                                            <NewsItem news={item} />
+                                        </FadeAndSlideScrollTriggerAnimation>
+                                    ))}
+                                </section>
+                            </>
+                    }
                 </div>
             </div>
         </SectionType1>
@@ -95,7 +103,7 @@ const NewsItem = (props: {
 
                 <div className="md:w-2/3 px-4">
                     <h4 className="text-xl font-bold mt-2 mb-2">{news.title}</h4>
-                    <Link href={"news/" + props.news.id} className="text-color3 hover:underline inline-block">
+                    <Link href={"news/details?id=" + props.news.id} className="text-color3 hover:underline inline-block">
                         もっと見る
                     </Link>
                 </div>

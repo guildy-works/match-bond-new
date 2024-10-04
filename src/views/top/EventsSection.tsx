@@ -4,19 +4,25 @@ import { EventIntroduceSection } from "../events/EventIntroduceSection";
 import { EventData, EventMetaData, fetchEvents } from "@/models/fetchEvents";
 import { useEffect, useState } from "react";
 import { EventCard } from "../events/EventCard";
+import { Loading } from "@/components/Loading";
 
-export const EventsSection = ({events}:{events:EventMetaData[]}) => {
+export const EventsSection = ({ events, isLoading }: { events: EventMetaData[], isLoading: boolean }) => {
     return (
         <div className="mx-auto px-4 sm:px-0 w-full max-w-5xl">
+
             <div className="mt-3 sm:mt-5">
                 <EventIntroduceSection />
 
+                {
+                    isLoading
+                        ? <Loading />
+                        : <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {events.map((event) => (
+                                <EventCard key={event.id} event={event} />
+                            ))}
+                        </div>
+                }
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {events.map((event) => (
-                        <EventCard key={event.id} event={event} />
-                    ))}
-                </div>
 
             </div>
 

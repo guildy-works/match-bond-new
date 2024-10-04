@@ -11,11 +11,13 @@ import { fetchAllNewses, News, NewsMeta } from "@/models/client";
 import { EventMetaData, fetchEvents } from "@/models/fetchEvents";
 import { useEffect, useState } from "react";
 
-export default  function Home() {
+export default function Home() {
 
-    
+
     const [events, setEvents] = useState<EventMetaData[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isEventLoading, setIsEventLoading] = useState(true);
+    const [isNewsLoading, setIsNewsLoading] = useState(true);
+
     const [error, setError] = useState(null);
 
     const [newses, setNewses] = useState<NewsMeta[]>([]);
@@ -23,17 +25,31 @@ export default  function Home() {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                setIsLoading(true);
+                setIsNewsLoading(true)
+                const result = await fetchAllNewses();
+                setNewses(result);
+            } catch (err: any) {
+                setError(err.message);
+            } finally {
+                setIsNewsLoading(false);
+            }
+        };
+
+        const fetchEvent = async () => {
+            try {
+                setIsEventLoading(true);
                 const result = await fetchEvents();
                 setEvents(result);
             } catch (err: any) {
                 setError(err.message);
             } finally {
-                setIsLoading(false);
+                setIsEventLoading(false);
             }
         };
 
         fetchNews();
+        fetchEvent();
+
     }, []);
 
     if (error) return <div>Error: {error}</div>;
@@ -47,13 +63,13 @@ export default  function Home() {
             <AboutSection />
 
             <div className="mt-4 sm:mt-12 lg:mt-24 w-full flex justify-center">
-                <NewsSection news={newses} />
+                <NewsSection news={newses} isLoading={isNewsLoading} />
             </div>
 
             <ServiceSection />
 
             <div className="w-full flex justify-center bg-color4 p-3 sm:p-6 md:p-8">
-                <EventsSection events={events} />
+                <EventsSection events={events} isLoading={isEventLoading}  />
             </div>
 
             <ContactSection />

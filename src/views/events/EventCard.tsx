@@ -23,7 +23,7 @@ export const EventCard: React.FC<EventCardProps> = ({ event }) => {
             </div>
 
             <div className="flex text-center px-4 pb-4 mt-auto w-full">
-                <Link href={`/events/${event.id}`} 
+                <Link href={`/events/details?id=${event.id}`} 
                 className="w-full bg-color3 px-4 text-white py-2 rounded-md hover:bg-color3/60 transition duration-300"
                 >詳細を見る</Link>
             </div>

@@ -1,13 +1,13 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import Image from "next/image";
-import Link from "next/link";
 import { FadeAndSlideScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation';
-import { EventData, EventMetaData, fetchEvents } from '@/models/fetchEvents';
+import { EventMetaData, fetchEvents } from '@/models/fetchEvents';
 import { EventCard } from '@/views/events/EventCard';
+import Head from 'next/head';
+import { Loading } from '@/components/Loading';
 
-const EventsPage: React.FC =  () => {
+const EventsPage: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const eventsPerPage = 6;
 
@@ -26,7 +26,6 @@ const EventsPage: React.FC =  () => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                setIsLoading(true);
                 const result = await fetchEvents();
                 setEvents(result);
             } catch (err: any) {
@@ -39,28 +38,32 @@ const EventsPage: React.FC =  () => {
         fetchNews();
     }, []);
 
-    if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
     return (
         <div className="w-full flex flex-col justify-center bg-color4 p-3 sm:p-6 md:p-8">
-            <title>{"Match-Bond 福山|イベント情報"}</title>
-            <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+            <Head>
+                <title>{"Match-Bond 福山|イベント情報"}</title>
+                <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+            </Head>
 
             <FadeAndSlideScrollTriggerAnimation className='mx-auto'>
                 <h3 className="text-title2 mt-4 sm:mt-8 mb-6">イベント情報</h3>
             </FadeAndSlideScrollTriggerAnimation>
 
             <div className="mx-auto min-h-[50vh]">
-
-
-                <div className="mt-3 sm:mt-5 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {currentEvents.map((event) => (
-                        <EventCard key={event.id} event={event} />
-                    ))}
-                </div>
+                {
+                    isLoading
+                        ? <Loading />
+                        : <>
+                            <div className="mt-3 sm:mt-5 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {currentEvents.map((event) => (
+                                    <EventCard key={event.id} event={event} />
+                                ))}
+                            </div>
+                        </>
+                }
             </div>
-
             {/* <div className="w-full flex justify-center mt-8">
                 <Pagination
                     currentPage={currentPage}

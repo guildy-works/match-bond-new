@@ -7,11 +7,9 @@ import { FadeAndSlideAnimation } from "@/libs/Animations/FadeAndSlideAnimation";
 import { SkewScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/SkewScrollTriggerAnimation";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
 import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage";
-import Kon1Image from '@/assets/kon1.jpg';
-import Kon2Image from '@/assets/kon2.jpg';
-import Kon3Image from '@/assets/kon3.jpg';
-import Kon4Image from '@/assets/kon4.jpg';
-import Kon5Image from '@/assets/kon5.jpg';
+import Kon1Image from '@/assets/kon6.jpg';
+import Kon2Image from '@/assets/kon7.jpg';
+import Kon3Image from '@/assets/kon8.jpg';
 
 export const TopSection = () => {
     return (
@@ -67,20 +65,14 @@ export const TopSection = () => {
             <FadeAndSlideScrollTriggerAnimation transform={{ translate: { x: "90vw" } }}
                 className="bg-color1 w-full p-6 sm:p-12 md:p-24 relative">
                 <div className="mx-auto px-4 py-8 gap-2 sm:gap-3 md:gap-4 flex flex-wrap justify-center">
-                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={150} className="w-64 h-full">
-                        <Image src={Kon1Image} alt="Kon" className="h-full object-cover rounded" />
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={150} >
+                        <Image src={Kon1Image} alt="Kon" className="w-72 h-52 object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
-                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={250} className="w-64 h-full">
-                        <Image src={Kon2Image} alt="Kon" className="h-full object-cover rounded" />
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={250}>
+                        <Image src={Kon2Image} alt="Kon" className="w-72 h-52 object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
-                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={300} className="w-64 col-span-2 h-full">
-                        <Image src={Kon3Image} alt="Woman" className="h-full object-cover rounded" />
-                    </FadeAndSlideScrollTriggerAnimation>
-                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={400} className="w-64 col-span-2 h-full">
-                        <Image src={Kon4Image} alt="Kon" className="h-full object-cover rounded" />
-                    </FadeAndSlideScrollTriggerAnimation>
-                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={550} className=" w-64 col-span-2 h-full">
-                        <Image src={Kon5Image} alt="Kon" className="h-full object-cover rounded" />
+                    <FadeAndSlideScrollTriggerAnimation tag="div" delay={300} >
+                        <Image src={Kon3Image} alt="Woman" className="w-72 h-52 object-cover rounded" />
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
 
