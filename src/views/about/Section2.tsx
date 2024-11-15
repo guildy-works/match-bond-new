@@ -6,23 +6,23 @@ import { SkewScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/SkewS
 import { HighlightMarker } from "@/components/HighlightMarker"
 
 export const AboutSection2 = () => (
-    <div className="max-w-5xl w-full mx-auto bg-color8 p-8 flex flex-col gap-8 overflow-hidden">
+    <div className="max-w-5xl w-full mx-auto bg-color6 p-8 flex flex-col gap-8 overflow-hidden">
 
         <div className="flex flex-col gap-3 sm:gap-5 md:gap-8">
             <TitleType2 title="すべての人の真摯な成婚を目指して" subTitle="01" />
-            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color8">
+            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color6">
                 ３組に１組、
                 <HighlightMarker> 約３５％の方が離婚</HighlightMarker>
                 しているのが日本の現状です。<br />
                 しかし、
                 <HighlightMarker> 結婚相談所で出会えた方の離婚率は１０％</HighlightMarker>ということを知っていますか？
             </SkewScrollTriggerAnimation>
-            <SkewScrollTriggerAnimation skewPanelClass="!bg-color8">
+            <SkewScrollTriggerAnimation skewPanelClass="!bg-color6">
                 相談所は結婚を真剣に考えている方だけが登録しています。<br />
                 登録をするだけでお相手のプロフィールを確認できるため、<br />
                 結婚後の生活を考えてお相手を選ぶことができます。<br />
             </SkewScrollTriggerAnimation>
-            <SkewScrollTriggerAnimation skewPanelClass="!bg-color8">
+            <SkewScrollTriggerAnimation skewPanelClass="!bg-color6">
                 結婚を真剣に考えているお相手を探すには、<br />
                 かなりの体力、時間、お金も使うことから『結婚したくない』と思う<br />
                 ２０代、３０代の方が増えてきました。<br />
@@ -32,21 +32,21 @@ export const AboutSection2 = () => (
 
         <div className="mx-auto flex flex-col gap-3 sm:gap-5 md:gap-8">
             <TitleType2 title="シングルの方を応援" subTitle="02" />
-            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color8">
+            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color6">
                 Match-Bondでは、<br />
                 シングルの方が安心してお見合いやイベントに参加できるように福山市の保育施設と連携を取り、<br />
                 0～9歳までのお子様を預けられるようにしています。
             </SkewScrollTriggerAnimation>
-            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color8">
+            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color6">
                 せっかく始まる新しい出会い。<br />
                 不安や心配にならずに理想のお相手が見つかるようにサポートいたします。
             </SkewScrollTriggerAnimation>
-            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color8">
+            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color6">
                 大切なお子様をプロの保育士が責任をもって保育いたしますので、<br />
                 ご安心してイベントに参加しながら、<br />
                 理想のお相手を探してくださいね。
             </SkewScrollTriggerAnimation>
-            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color8">
+            <SkewScrollTriggerAnimation className="text-size2" skewPanelClass="!bg-color6">
                 「なんでシングルの人の成婚なの？」と質問があったので、<br />
                 ここに記します。
             </SkewScrollTriggerAnimation>

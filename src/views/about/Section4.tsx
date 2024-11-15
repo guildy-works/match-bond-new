@@ -7,11 +7,11 @@ import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage"
 import BabyImage from "@/assets/baby.jpg"
 
 export const AboutSection4 = () => (
-    <div className="max-w-5xl w-full mx-auto  bg-color8 p-8 gap-8 flex flex-col md:p-24 md:gap-24">
+    <div className="max-w-5xl w-full mx-auto  bg-color6 p-8 gap-8 flex flex-col md:p-24 md:gap-24">
     <div className="flex flex-col gap-3 sm:gap-5 md:gap-8 items-center">
         <TitleType className="mx-auto" title="アフターフォロー" subTitle="After Follow" />
 
-        <SkewScrollTriggerAnimation className="text-title2 mx-auto text-color3" skewPanelClass="!bg-color8">
+        <SkewScrollTriggerAnimation className="text-title2 mx-auto text-color3" skewPanelClass="!bg-color6">
             成婚がゴールじゃない
         </SkewScrollTriggerAnimation>
 

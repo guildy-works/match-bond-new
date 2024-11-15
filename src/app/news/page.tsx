@@ -40,14 +40,14 @@ export default function NewsPage() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <SectionType1 className="bg-color8">
+        <SectionType1 className="bg-color6">
             <Head>
                 <title>{`Match-Bond 福山｜News`}</title>
                 <meta name="description" content="広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。" />
             </Head>
 
             <div className="justify-start flex flex-col items-start gap-1 sm:gap-2 md:gap-3 w-full">
-                <Section1Title title="News" subTitle="　　" innerClassName="!bg-color8" />
+                <Section1Title title="News" subTitle="　　" innerClassName="!bg-color6" />
 
                 <div className="mx-auto w-full min-h-[50vh]">
                     {

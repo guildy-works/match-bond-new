@@ -5,7 +5,7 @@ import AboutImage from "@/assets/img.jpg"
 
 export const AboutSection1= () => <div className="w-full relative">
     {/* 背景パネル */}
-    <div className="w-[70vw] absolute inset-0 bg-color8 -z-10" />
+    <div className="w-[70vw] absolute inset-0 bg-color6 -z-10" />
 
     <div className="max-w-screen-md grid md:grid-cols-2 py-24 mx-auto gap-3">
         <div className="flex flex-col gap-8 p-8">

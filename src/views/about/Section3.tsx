@@ -7,11 +7,11 @@ import { HighlightMarker } from "@/components/HighlightMarker"
 import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage"
 
 export const AboutSection3 = () => (
-    <div className="max-w-5xl w-full mx-auto  bg-color8 p-8 gap-8 flex flex-col md:p-24 md:gap-24 items-center">
+    <div className="max-w-5xl w-full mx-auto  bg-color6 p-8 gap-8 flex flex-col md:p-24 md:gap-24 items-center">
     <div className="flex flex-col gap-3 sm:gap-5 md:gap-8">
         <TitleType className="mx-auto" title="代表プロフィール" subTitle="Profile" />
 
-        <SkewScrollTriggerAnimation className="text-title2 mx-auto text-color3" skewPanelClass="!bg-color8">
+        <SkewScrollTriggerAnimation className="text-title2 mx-auto text-color3" skewPanelClass="!bg-color6">
             成婚がゴールじゃない
         </SkewScrollTriggerAnimation>
 

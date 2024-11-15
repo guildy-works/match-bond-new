@@ -15,7 +15,7 @@ export const ServiceSection = () => {
 
 
             <div className="relative max-w-screen-md grid md:grid-cols-2 py-24 mx-auto gap-3">
-                <div className="w-[100vw] absolute inset-0 top-72 bg-color8 -z-10" />
+                <div className="w-[100vw] absolute inset-0 top-72 bg-color6 -z-10" />
 
                 <div className="flex flex-col gap-8 p-8 sm:p-16 mt-auto">
                     <TitleType title="料金プラン" subTitle="Service" />

@@ -3,7 +3,7 @@ import { SectionType1 } from "@/components/SectionType1"
 export const ContactSection = () => {
 
     return (
-        <SectionType1 disableLine className="bg-color8" innerClassName="items-center">
+        <SectionType1 disableLine className="bg-color6" innerClassName="items-center">
 
                 <div className="bg-white p-8 md:p-16 md:px-48 w-full my-8 md:my-32">
                     <h2 className="text-title2 font-jost text-center mb-2">CONTACT</h2>
