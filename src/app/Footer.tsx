@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const Footer = () => {
     return (
-        <footer className="bg-color1 pt-16 pb-8 w-full">
+        <footer className="bg-color3 pt-16 pb-8 w-full">
             <Image className="mx-auto" src={Logo} alt="Match-Bond" width={160} height={160} />
 
             <div className="mx-auto px-4  w-full mt-8">

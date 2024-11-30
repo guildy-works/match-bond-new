@@ -40,6 +40,8 @@ const config: Config = {
         colors: {
             ...colors,
 
+            color14:"fffbfb",
+
             color3: '#dbafaf',
             color5: '#efd8d7',
             color1: '#f5f0f0',
@@ -47,13 +49,17 @@ const config: Config = {
             color2: '#dfeef5',
 
             color7: '#d4ebd0',
-            color6: '#fef5df',
+            color6: '#fff5e7',
 
             color9: "#e58f8f",
             color10: "#54010b",
-            color11: "#f6b62e",
+            color11: "#f5b066",
             color12: "#fedebb",
-            color12_2: "#fdecd7",
+            color12_2: "#fbf0eb",
+
+            color13:"#f2dac6",
+
+            color9_2:"#784644",
 
             white: '#ffffff',
 

@@ -11,6 +11,7 @@ import { fetchAllNewses, News, NewsMeta } from "@/models/client";
 import { EventMetaData, fetchEvents } from "@/models/fetchEvents";
 import { useEffect, useState } from "react";
 import { FeaturesSection } from "@/views/top/FeaturesSection";
+import { SnsSection } from "@/views/top/SnsSection";
 
 export default function Home() {
 
@@ -60,21 +61,17 @@ export default function Home() {
             <title>{"Match-Bond 福山"}</title>
             <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
 
+            <div className="bg_noise"></div>
+
             <TopSection />
 
             <FeaturesSection />
 
             <AboutSection />
 
-            <div className="mt-4 sm:mt-12 lg:mt-24 w-full flex justify-center">
-                <NewsSection news={newses} isLoading={isNewsLoading} />
-            </div>
+            <SnsSection/>
 
             <ServiceSection />
-
-            <div className="w-full flex justify-center bg-color4 p-3 sm:p-6 md:p-8">
-                <EventsSection events={events} isLoading={isEventLoading} />
-            </div>
 
             <ContactSection />
 

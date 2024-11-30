@@ -23,10 +23,10 @@ export const Header = () => {
 
     return (
         <>
-            <header className="flex items-center sticky top-0 mt-0 md:mt-48 bg-white/60 backdrop-blur-lg z-20">
+            <header className="flex items-center sticky top-0 mt-0 bg-white/60 backdrop-blur-lg z-20">
                 {state.scrollTop > 0 && (
                     <Link href="/">
-                        <h1 className='font-asterdam ml-3 text-color2 text-[26px] font-extralight whitespace-nowrap'>Match Bond</h1>
+                        <h1 className='font-asterdam ml-3 text-color3 text-[26px] font-extralight whitespace-nowrap'>Match Bond</h1>
                     </Link>
                 )
                 }

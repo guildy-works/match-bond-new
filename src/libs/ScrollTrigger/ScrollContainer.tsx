@@ -120,6 +120,7 @@ export const ScrollContainer = (props: ScrollContainerProps) => {
                     width: "100%",
                     display: "flex",
                     flexDirection: "column",
+                    scrollBehavior: "smooth",
                 }}
                 className={props.innerClassName}
                 ref={node => {

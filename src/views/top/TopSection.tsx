@@ -15,33 +15,42 @@ export const TopSection = () => {
         <div className="w-full mx-auto">
             <div className="w-full  relative">
                 <Image src={Bg1} alt="background" className="absolute bottom-0 w-full" />
+
+                <div className="md:hidden">
+                    <TransitionImage
+                        src={TopImage}
+                        parallaxSlideLength={20}
+                        scale={{ from: 0.8, to: 1 }}
+                        className="w-full"
+                        style={{ maxHeight: "680px", }}
+                        alt="Top"
+                    />
+                </div>
+
                 <div className="flex-1 ">
                     <FadeAndSlideAnimation in transform={{ translate: { x: "-100vw" } }} className="h-fit">
                         <div className="bg-color1 h-24 sm:h-44 w-full" />
                     </FadeAndSlideAnimation>
 
-                    <div className="w-full justify-center grid grid-cols-1 md:grid-cols-2">
+                    <div className="w-full justify-center flex flex-col-reverse md:grid md:grid-cols-2">
                         <div className=" inset-0 m-auto flex flex-col -mt-4">
                             <FadeAndSlideAnimation in tag={"h1"} className="font-asterdam text-title1 mx-auto">
                                 Match Bond
                             </FadeAndSlideAnimation>
 
                             <div className="mx-auto">
-
-                                <SkewScrollTriggerAnimation tag={"h3"} className="text-title4 mt-5 sm:mt-12 text-font2">
+                                <FadeAndSlideScrollTriggerAnimation tag={"h3"} className="text-title4 mt-5 sm:mt-12 text-font2">
                                     Match-Bond 山本夢翔
-                                </SkewScrollTriggerAnimation>
-                                <SkewScrollTriggerAnimation tag={"h3"} className="text-title4 mt-4新着情報・お知らせ text-font2">
+                                </FadeAndSlideScrollTriggerAnimation>
+                                <FadeAndSlideScrollTriggerAnimation tag={"h3"} className="text-title4 mt-4新着情報・お知らせ text-font2">
                                     総額〇〇万円がお得になる婚活
-                                </SkewScrollTriggerAnimation>
-
-                                <SkewScrollTriggerAnimation tag={"p"} className="text-size2 mt-5">
+                                </FadeAndSlideScrollTriggerAnimation>
+                                <FadeAndSlideScrollTriggerAnimation tag={"p"} className="text-size2 mt-5">
                                     結婚後も幸せが続く家庭作り、
-                                </SkewScrollTriggerAnimation>
-
-                                <SkewScrollTriggerAnimation tag={"p"} className="text-title3 mt-5">
+                                </FadeAndSlideScrollTriggerAnimation>
+                                <FadeAndSlideScrollTriggerAnimation tag={"p"} className="text-title3 mt-5">
                                     あなたの幸せを応援します。
-                                </SkewScrollTriggerAnimation>
+                                </FadeAndSlideScrollTriggerAnimation>
                             </div>
 
                             <FadeAndSlideScrollTriggerAnimation transform={{ scale: 1.2, }} >
@@ -49,12 +58,12 @@ export const TopSection = () => {
                             </FadeAndSlideScrollTriggerAnimation>
                         </div>
 
-                        <div className="p-4 md:p-24 md:pr-36">
+                        <div className="hidden md:block p-4 md:p-24 md:pr-36">
                             <TransitionImage
                                 src={TopImage}
                                 parallaxSlideLength={20}
                                 scale={{ from: 0.8, to: 1 }}
-                                className="md:h-svh w-full md:w-auto  md:max-w-3xl lg:max-w-fit mb-24 -mt-4 rounded-lg"
+                                className="h-svh w-auto max-w-3xl lg:max-w-fit mb-24 -mt-4 rounded-lg"
                                 style={{ maxHeight: "680px", }}
                                 alt="Top"
                             />

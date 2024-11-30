@@ -5,26 +5,25 @@ import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimatio
 export const FeaturesSection = () => {
 
     return (
-        <SectionType1 className="">
-
-
-            <div className="max-w-4xl mx-auto mt-40 flex flex-col space-y-12 items-center">
+        <SectionType1 className="bg-color12/20">
+            <div className="max-w-4xl mx-auto md:mt-40 flex flex-col gap-12 items-center pb-20">
                 <FadeAndSlideScrollTriggerAnimation innerClassName="space-y-3 w-fit">
                     <h2 className="text-center">
                         <span className="text-color9 text-title1">6</span>
                         <span className="text-grey1 text-title2">つの特徴</span>
                     </h2>
-                    <hr className="border-color11"/>
+                    <hr className="border-color11" />
                     <p className="mt-0 text-size2 text-grey1">
                         Match-Bondのサービス
                     </p>
                 </FadeAndSlideScrollTriggerAnimation>
 
                 <FadeAndSlideScrollTriggerAnimation tag="p" innerClassName="" className="text-color10">
-                    「お得」「効率的」「幸せ」な婚活をサポートします。<br/>
+                    「お得」「効率的」「幸せ」な婚活をサポートします。<br />
 
-                    福山市近辺のお店で総額〇〇万円お得なサービスを受けながら、<br/>
-                    効率的に幸せな婚活・結婚を目指します。<br/>
+                    福山市近辺のお店で<br />
+                    総額〇〇万円お得なサービスを受けながら、<br />
+                    効率的に幸せな婚活・結婚を目指します。<br />
                     福山市のGoogle口コミNo１の婚活サポートです。
                 </FadeAndSlideScrollTriggerAnimation>
 
@@ -38,10 +37,10 @@ export const FeaturesSection = () => {
 
 const CardItem = ({ title, content, colorClass }: { title: string, content: string, colorClass: string }) => {
     return (
-        <div className={`text-center p-3 sm:p-6 rounded flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
+        <FadeAndSlideScrollTriggerAnimation className={`text-center p-3 sm:p-6 rounded-3xl flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
             <h2 className="text-size2 text-white mb-2 border-b-orange-100 border-b-2  pb-2 w-full ">{title}</h2>
             <p className="text-p text-white">{content}</p>
-        </div>
+        </FadeAndSlideScrollTriggerAnimation>
     );
 };
 

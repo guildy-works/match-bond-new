@@ -13,6 +13,7 @@ interface FadeAndSlideAnimationProps extends TransitionProps {
         scale?: number;
         // eslint-disable-next-line @typescript-eslint/ban-types
         transformOrigin?: "bottom" | "center" | "left" | "right" | "top" | (string & {});
+        opacity?: number;
     },
     transformTo?: {
         translate?: {
@@ -23,6 +24,7 @@ interface FadeAndSlideAnimationProps extends TransitionProps {
         scale?: number;
         // eslint-disable-next-line @typescript-eslint/ban-types
         transformOrigin?: "bottom" | "center" | "left" | "right" | "top" | (string & {});
+        opacity?: number;
     }
     tag?: ElementType;
 }
@@ -47,13 +49,13 @@ export const FadeAndSlideAnimation = (props: FadeAndSlideAnimationProps) => {
                     ...{
                         transformOrigin: transform?.transformOrigin,
                         transform: buildTransform(transform, 0.8),
-                        opacity: 0,
-                        transition: `all ${parse(props.delay)} ${props.duration ?? 3000}ms cubic-bezier(0.18, 0.66, 0.08, 0.97)`
+                        opacity: transform?.opacity ?? 0,
+                        transition: `all ${parse(props.delay)} ${props.duration ?? 1000}ms cubic-bezier(0.18, 0.66, 0.08, 0.97)`
                     },
                     ...(state === "entered"
                         ? {
                             transform: buildTransform(transformTo, 1),
-                            opacity: 1,
+                            opacity: transformTo?.opacity ?? 1,
                         }
                         : {}),
                     ...props.style,
