@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    // basePath: "/portfolio",
+    basePath: "/match-bond-new",
 
     /**
      * Disable server-based image optimization. Next.js does not support
