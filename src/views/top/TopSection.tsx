@@ -29,7 +29,7 @@ export const TopSection = () => {
 
                 <div className="flex-1 ">
                     <FadeAndSlideAnimation in transform={{ translate: { x: "-100vw" } }} className="h-fit">
-                        <div className="bg-color1 h-24 sm:h-44 w-full" />
+                        <div className="bg-color12_2 h-24 sm:h-44 w-full" />
                     </FadeAndSlideAnimation>
 
                     <div className="w-full justify-center flex flex-col-reverse md:grid md:grid-cols-2">
