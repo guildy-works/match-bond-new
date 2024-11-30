@@ -10,7 +10,7 @@ const nextConfig = {
      *
      * @see https://nextjs.org/docs/views/api-reference/components/image#unoptimized
      */
-    images: { unoptimized: true } ,
+
     compiler: {
     },
     sassOptions: {
