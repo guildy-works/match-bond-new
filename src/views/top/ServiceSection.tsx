@@ -155,7 +155,7 @@ const Section3 = () => {
                         理想の相手をいっしょに見つけましょう。<br /><br />
 
                         <FadeAndSlideScrollTriggerAnimation className="mx-auto md:hidden">
-                            <Image src={Jba} alt="JBA" className="w-full max-w-[280px]" />
+                            <Image src={Oaite} alt="JBA" className="w-full max-w-[160px]" />
                         </FadeAndSlideScrollTriggerAnimation>
 
                         コネクトシップについて<br />
@@ -167,11 +167,11 @@ const Section3 = () => {
 
                 <div className="px-8 mt-auto flex flex-col gap-8 items-center">
                     <FadeAndSlideScrollTriggerAnimation className="hidden md:block">
-                        <Image src={Jba} alt="JBA" className="w-full max-w-[280px]" />
+                        <Image src={Oaite} alt="JBA" className="w-full max-w-[160px]" />
                     </FadeAndSlideScrollTriggerAnimation>
 
                     <FadeAndSlideScrollTriggerAnimation>
-                        <Image src={Oaite} alt="おあいてネット" className="w-[160px]" />
+                        <Image src={Jba} alt="おあいてネット" className="w-[280px]" />
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
             </div>
@@ -182,7 +182,7 @@ const Section3 = () => {
 const Section6 = () => {
     return (
         <div className="w-full my-32 bg-[#f5ece7] max-w-screen-md grid md:grid-cols-2 py-24 mx-auto gap-3">
-            <div className="flex flex-col gap-8 p-8 sm:p-16 my-auto">
+            <div className="flex flex-col gap-8 p-8 sm:p-16 my-auto items-center">
                 <TitleType title="お客様の声" subTitle="Reviews" />
                 <LinkButton href="https://g.co/kgs/CJDKC7U" title="Google口コミはこちら" ></LinkButton>
 
@@ -193,14 +193,14 @@ const Section6 = () => {
 
             <div className="px-4 md:px-8 my-auto grid grid-cols-2 gap-2 md:gap-8 mx-auto">
                 <div>
-                    <Image src={Review4} alt="安心して相談できました" />
+                    <Image src={Review4} alt="安心して相談できました"  className="rounded-2xl"/>
                 </div>
                 <div className="flex flex-col gap-2 md:gap-8">
-                    <Image src={Review1} alt="安心して相談できました" />
-                    <Image src={Review2} alt="安心して相談できました" />
-                    <Image src={Review3} alt="安心して相談できました" />
-                    <Image src={Review5} alt="安心して相談できました" />
-                    <Image src={Review6} alt="安心して相談できました" />
+                    <Image src={Review1} alt="安心して相談できました"  className="rounded-2xl"/>
+                    <Image src={Review2} alt="安心して相談できました"  className="rounded-2xl"/>
+                    <Image src={Review3} alt="安心して相談できました" className="rounded-2xl" />
+                    <Image src={Review5} alt="安心して相談できました"  className="rounded-2xl"/>
+                    <Image src={Review6} alt="安心して相談できました"  className="rounded-2xl"/>
                 </div>
 
             </div>
@@ -212,13 +212,13 @@ const Section1 = () => {
     return (
         <div className="w-full mt-24 md:mt-48">
             {/* 背景パネル */}
-            <div className="relative max-w-screen-md grid md:grid-cols-2 py-24 mx-auto gap-3">
-                <div className="w-[100vw] absolute inset-0 md:top-44 bg-[#f5ece7] -z-10" />
+            <div className="relative max-w-screen-lg grid md:grid-cols-2 py-24 mx-auto gap-3">
+                <div className="w-[100vw] absolute inset-0 md:top-60 bg-[#f5ece7] -z-10" />
 
-                <div className="flex flex-col gap-8 p-8 sm:p-16 mt-auto">
+                <div className="flex flex-col gap-8 p-8 sm:px-24 sm:pt-48 mt-auto items-center">
                     <TitleType title="どんな婚活サポート？" subTitle="Service" />
 
-                    <FadeAndSlideScrollTriggerAnimation tag="p" >
+                    <FadeAndSlideScrollTriggerAnimation tag="p" className="w-full" >
                         Match-Bondは福山市近辺のお客様限定に婚活サポートを提供しています。<br />
                         福山市近辺ってどこまで？それはお客様基準としています。<br />
                         岡山県倉敷市に住んでいるけど、よく福山に行くよというお客様なら福山市近辺です。<br /><br />
@@ -248,7 +248,7 @@ const Section1 = () => {
                         更に結婚後もお得なサポートありだなんて最高！！！<br />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <div className="grid  md:grid-cols-2 gap-4">
+                    <div className="">
                         <LinkButton href="/" title="婚活中にお得なサービスが受けれるお店はコチラ" ></LinkButton>
                         <LinkButton href="/" title="成婚退会後にお得なサービスが受けれるお店はコチラ" ></LinkButton>
                     </div>
@@ -256,8 +256,8 @@ const Section1 = () => {
                     <p>※お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。</p>
                 </div>
 
-                <div className="px-8 my-auto flex flex-col gap-8">
-                    <TransitionImage alt="私たちの想い" src={mariage1} className="rounded-md" />
+                <div className="px-8 my-auto flex flex-col gap-8 h-full">
+                    <TransitionImage alt="私たちの想い" src={mariage1} className="rounded-md mt-auto" />
                     <TransitionImage alt="私たちの想い" src={mariage2} className="rounded-md" />
                 </div>
             </div>

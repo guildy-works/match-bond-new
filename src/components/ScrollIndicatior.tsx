@@ -10,7 +10,7 @@ export const ScrollIndicator = () => {
 
     return <div
         style={{
-            bottom: `calc(100vh - ${size.innerHeight}px + 8px)`,
+            bottom: `calc(100svh - ${size.innerHeight}px + 8px)`,
         }}
         className={clsx(styles.container, "sm:mr-6 md:8")}
     >

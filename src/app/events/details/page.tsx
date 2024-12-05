@@ -6,7 +6,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Page(props: { params: { id: string } }) {
+export default function Page(props: { params: Promise<{ id: string }> }) {
     const [news, setNews] = useState<EventData | null>(null);
     const formattedDate = news?.publishedAt?.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
     const [isLoading, setIsLoading] = useState(true);

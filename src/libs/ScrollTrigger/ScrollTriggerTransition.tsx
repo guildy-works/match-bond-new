@@ -28,7 +28,7 @@ interface ScrollTriggerTransisionProps {
 
     /**
      * @example
-     * 100vh + 20px
+     * 100svh + 20px
      * 80vh + 20px + 30%
      * 
      * [(%|px|vh)|number]
@@ -37,7 +37,7 @@ interface ScrollTriggerTransisionProps {
 
     /**
      * @example
-     * 100vh + 20px
+     * 100svh + 20px
      * 80vh + 20px + 30%
      * 
      * [(%|px|vh)|number]

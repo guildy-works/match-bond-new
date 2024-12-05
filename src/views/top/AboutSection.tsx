@@ -55,6 +55,7 @@ export default function AboutSection() {
                 <div className="max-w-5xl w-full flex flex-col">
                     <FeatureCard
                         title="自己紹介"
+                        num="01"
                         className="bg-color9_2"
                         imageSection={<TransitionImage src={About1} alt="about1" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
@@ -70,6 +71,7 @@ export default function AboutSection() {
 
                     <FeatureCard
                         title="社会人サークル"
+                                 num="02"
                         className="bg-color6 text-color10"
                         imageSection={<TransitionImage src={About2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
@@ -80,6 +82,7 @@ export default function AboutSection() {
 
                     <FeatureCard
                         title="結婚相談所を起業"
+                                 num="03"
                         className="bg-color12 text-color10"
                         imageSection={<TransitionImage src={Img1} alt="about2" className="w-full rounded-xl " parallaxSlideLength={20} baseScale={1.1} />}
                     >
@@ -107,11 +110,12 @@ export default function AboutSection() {
                                 結婚した後も幸せが続くようにご支援します。<br />
                             </FadeAndSlideScrollTriggerAnimation>
                         </div>
-                        <Image src={Illust} alt="about2" className="max-w-screen-sm mx-auto" />
+                        <Image src={Illust} alt="婚活を支援する企業になりませんか?" className="w-full max-w-screen-sm mx-auto" />
                     </FadeAndSlideScrollTriggerAnimation>
 
                     <FeatureCard
                         title="結婚について"
+                                 num="05"
                         className="bg-color9_2"
                         imageSection={<TransitionImage src={Img2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
@@ -154,12 +158,12 @@ export default function AboutSection() {
     );
 }
 
-const FeatureCard = ({ children, title, imageSection, className }: { className?: string, children: React.ReactNode, title: string, imageSection: React.ReactNode }) => {
+const FeatureCard = ({ children, title, imageSection, className ,num}: {num:string, className?: string, children: React.ReactNode, title: string, imageSection: React.ReactNode }) => {
     return (
         <FadeAndSlideScrollTriggerAnimation transform={{ opacity: 1, translate: { y: "40px" }, scale: 1.1 }}
             innerClassName={clsx("space-y-8 p-12 pb-24 -mt-12 rounded-t-3xl grid md:grid-cols-2", className)}>
             <div className="flex flex-col justify-center md:p-8 gap-4">
-                <AboutHeqading num="01" title={title} />
+                <AboutHeqading num={num} title={title} />
                 <FadeAndSlideScrollTriggerAnimation tag="p"
                     className="space-y-2 mt-3 sm:mt-5 md:mt-7 text-size2 "
                 >
