@@ -37,8 +37,8 @@ const CardItem = ({ title, content, colorClass, delay }: { delay: number, title:
     return (
         <FadeAndSlideScrollTriggerAnimation
             delay={delay}
-            className="w-full"
-            innerClassName={`w-full text-center p-3 sm:p-6 rounded-3xl flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
+            className="size-full"
+            innerClassName={`size-full text-center p-3 sm:p-6 rounded-3xl flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
             <h2 className="text-size2 text-white mb-2 border-b-orange-100 border-b-2  pb-2 w-full whitespace-pre">{title}</h2>
             <p className="text-p text-white">{content}</p>
         </FadeAndSlideScrollTriggerAnimation>
@@ -51,12 +51,12 @@ const CardGrid = () => {
             <CardItem
                 title="どんな婚活サポート？"
                 delay={0}
-                content={<>お得」「効率的」<br className="sm:hidden" />「幸せ」</>}
+                content={<>「お得」「効率的」<br className="sm:hidden" />「幸せ」</>}
                 colorClass="bg-color9"
             />
             <CardItem
                 delay={20}
-                title={<>お得なサービスが<br className="sm:hidden" />受けれるお店一覧</>}
+                title={<>お得なサービスが<br className="md:hidden" />受けれるお店一覧</>}
                 content="婚活～結婚に有益なお店"
                 colorClass="bg-color10"
             />

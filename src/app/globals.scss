@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap");
 
 @font-face {
     font-family: "Amsterdam";
@@ -19,17 +19,17 @@ body {
     color: rgb(var(--foreground-rgb));
     background: #fffbfb;
     @apply text-size-p text-font1;
-    font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
 }
 
-p,div{
+p,
+div {
     @apply text-size-p;
 }
 
 ::selection {
-@apply bg-color9/50 text-color10;
-  }
-  
+    @apply bg-color9/50 text-color10;
+}
 
 @layer utilities {
     .text-balance {
