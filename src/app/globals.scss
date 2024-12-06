@@ -26,6 +26,11 @@ p,div{
     @apply text-size-p;
 }
 
+::selection {
+@apply bg-color9/50 text-color10;
+  }
+  
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;

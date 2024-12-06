@@ -273,8 +273,8 @@ const Section1 = () => {
                     </FadeAndSlideScrollTriggerAnimation>
 
                     <div className="w-full space-y-4 flex flex-col">
-                        <LinkButton href="/" title="婚活中にお得なサービスが受けれるお店はコチラ" className="px-1 w-full" innerClassName="!px-0" />
-                        <LinkButton href="/" title="成婚退会後にお得なサービスが受けれるお店はコチラ" className="px-2 w-full" innerClassName="!px-0" />
+                        <LinkButton href="/" title="婚活中にお得なサービスが受けれるお店はコチラ" className="w-full" innerClassName="!px-0" />
+                        <LinkButton href="/" title="成婚退会後にお得なサービスが受けれるお店はコチラ" className="w-full" innerClassName="!px-0" />
                     </div>
 
                     <p>※お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。</p>
