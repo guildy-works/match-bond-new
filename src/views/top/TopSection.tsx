@@ -14,8 +14,8 @@ import Image from 'next-export-optimize-images/picture';
 export const TopSection = () => {
     return (
         <div className="w-full mx-auto relative">
-            <Image src={Bg1} alt="background" className="hidden md:block w-full" />
-            <Image src={Bg1_Mobile} alt="background" className="md:hidden w-full" />
+            <TransitionImage src={Bg1} alt="background" className="hidden md:block w-full" />
+            <TransitionImage src={Bg1_Mobile} alt="background" className="md:hidden w-full" />
 
             <div className="absolute flex flex-col justify-center items-center inset-0 m-auto">
                 <FadeAndSlideScrollTriggerAnimation tag="h1" className="font-slight text-[1.8rem] md:text-[3.8rem] font-bold text-[#c3735e]">

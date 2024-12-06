@@ -21,9 +21,9 @@ export const SnsSection = () => {
 
             <div className="relative">
                 {/* 背景テキスト */}
-                <div className="font-asterdam absolute top-40 left-0 right-0 text-[96px] w-[680px] text-color9/20 -rotate-12 font-thin ">
+                <div className="font-slight absolute top-32 left-0 right-0 text-[80px] w-[820px] text-color9/20 -rotate-12 ">
                     Match-Bond
-                </div>
+                </div>婚活イベント
                 <FadeAndSlideScrollTriggerAnimation>
                     婚活に関する情報、婚活イベントの告知をInstagramから配信しております。<br />
                     司会業、様々なイベント、社会人サークルのInstagramも併せて、<br />

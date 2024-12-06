@@ -33,11 +33,12 @@ export const FeaturesSection = () => {
     )
 }
 
-const CardItem = ({ title, content, colorClass }: { title: ReactNode, content: ReactNode, colorClass: string }) => {
+const CardItem = ({ title, content, colorClass, delay }: { delay: number, title: ReactNode, content: ReactNode, colorClass: string }) => {
     return (
-        <FadeAndSlideScrollTriggerAnimation 
-        innerClassName="w-full"
-        className={`w-full text-center p-3 sm:p-6 rounded-3xl flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
+        <FadeAndSlideScrollTriggerAnimation
+            delay={delay}
+            className="w-full"
+            innerClassName={`w-full text-center p-3 sm:p-6 rounded-3xl flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
             <h2 className="text-size2 text-white mb-2 border-b-orange-100 border-b-2  pb-2 w-full whitespace-pre">{title}</h2>
             <p className="text-p text-white">{content}</p>
         </FadeAndSlideScrollTriggerAnimation>
@@ -49,32 +50,38 @@ const CardGrid = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <CardItem
                 title="どんな婚活サポート？"
-                content={<>お得」「効率的」<br className="sm:hidden"/>「幸せ」</>}
+                delay={0}
+                content={<>お得」「効率的」<br className="sm:hidden" />「幸せ」</>}
                 colorClass="bg-color9"
             />
             <CardItem
-                title={<>お得なサービスが<br className="sm:hidden"/>受けれるお店一覧</>}
+                delay={20}
+                title={<>お得なサービスが<br className="sm:hidden" />受けれるお店一覧</>}
                 content="婚活～結婚に有益なお店"
                 colorClass="bg-color10"
             />
             <CardItem
+                delay={40}
                 title="お客様の声"
-                content={<>福山市No1の<br className="sm:hidden"/>Google口コミ</>}
+                content={<>福山市No1の<br className="sm:hidden" />Google口コミ</>}
                 colorClass="bg-color11"
             />
             <CardItem
+                delay={60}
                 title="結婚相談所"
-                content={<>「入会金・登録費」<br className="sm:hidden"/>初期費用が0円</>}
+                content={<>「入会金・登録費」<br className="sm:hidden" />初期費用が0円</>}
                 colorClass="bg-color9"
             />
             <CardItem
+                delay={80}
                 title="婚活イベント"
-                content={<>「お得」「効率的」<br className="sm:hidden"/>「幸せ」</>}
+                content={<>「お得」「効率的」<br className="sm:hidden" />「幸せ」</>}
                 colorClass="bg-color10"
             />
             <CardItem
+                delay={100}
                 title="恋愛相談窓口"
-                content={<>初回15分無料<br className="sm:hidden"/>まずは、ココから！</>}
+                content={<>初回15分無料<br className="sm:hidden" />まずは、ココから！</>}
                 colorClass="bg-color11"
             />
         </div>

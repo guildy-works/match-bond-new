@@ -42,9 +42,10 @@ export default function AboutSection() {
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
 
-                <div className="px-8 mt-8 md:my-auto">
-                    <FadeAndSlideScrollTriggerAnimation innerClassName="rounded-sm overflow-hidden">
-                        <Image src={Profile} alt="img" />
+                <div className="px-8 -mt-12 md:my-auto">
+                    <FadeAndSlideScrollTriggerAnimation innerClassName="rounded-sm overflow-hidden" 
+                    transform={{ translate: { y: "60px", }, scale: 1.2 }}>
+                        <Image src={Profile} alt="img" className="translate-y-12"/>
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
             </div>

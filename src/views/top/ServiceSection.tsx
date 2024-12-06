@@ -55,27 +55,33 @@ const Glossary = () => {
                 <h1 className="text-title3 font-bold text-gray-800 mb-2">用語説明</h1>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
                     <GlossaryItem
+                        delay={0}
                         term="入会費"
                         description="入会するためにかかる費用"
                     />
                     <GlossaryItem
                         term="登録費"
+                        delay={20}
                         description="登録するためにかかる費用"
                     />
                     <GlossaryItem
                         term="月会費"
+                        delay={40}
                         description="結婚相談所の使用料（毎月）"
                     />
                     <GlossaryItem
                         term="お見合い費"
+                        delay={60}
                         description="お見合いが成立した際にかかる費用"
                     />
                     <GlossaryItem
+                        delay={80}
                         term="本交際"
                         description="交際する人を1名に決めること"
                     />
                     <GlossaryItem
                         term="成婚退会"
+                        delay={100}
                         description="本交際で決めた人といっしょに退会すること"
                     />
                 </div>
@@ -84,12 +90,12 @@ const Glossary = () => {
     )
 }
 
-const GlossaryItem = ({ term, description }: any) => {
+const GlossaryItem = ({ term, description, delay }: any) => {
     return (
-        <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+        <FadeAndSlideScrollTriggerAnimation delay={delay} className="h-full" innerClassName="h-full p-3 bg-gray-50 rounded-lg border border-gray-200">
             <h2 className="text-size2 font-semibold text-color9">{term}</h2>
             <p className="text-gray-600 mt-1 text-size3">{description}</p>
-        </div>
+        </FadeAndSlideScrollTriggerAnimation>
     )
 }
 
@@ -340,7 +346,7 @@ const Section5 = () => {
 const Section4 = () => {
     return (
         <SectionType1 className="w-full bg-color1 py-8 md:py-24" innerClassName="flex flex-col items-center">
-            <TitleType title="婚活イベント" subTitle="Events" />
+            <TitleType className="mt-16" title="婚活イベント" subTitle="Events" />
 
             <div className="flex flex-col gap-8 p-8 sm:p-16 mt-auto">
                 <FadeAndSlideScrollTriggerAnimation  >
