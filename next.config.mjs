@@ -17,10 +17,7 @@ const nextConfig = {
     sassOptions: {
 
     },
-    convertFormat: [
-        ['png', 'webp'],
-        ['jpg', 'webp'],
-    ],
+
 };
 
 export default withExportImages(nextConfig);
