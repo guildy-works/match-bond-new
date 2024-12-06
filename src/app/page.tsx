@@ -2,8 +2,6 @@
 
 import { ScrollIndicator } from "@/components/ScrollIndicatior";
 import { TopSection } from "@/views/top/TopSection";
-import { NewsSection } from "@/views/top/NewsSection";
-import { EventsSection } from "@/views/top/EventsSection";
 import AboutSection from "@/views/top/AboutSection";
 import { ContactSection } from "@/views/top/ContactSection";
 import { ServiceSection } from "@/views/top/ServiceSection";
@@ -59,7 +57,7 @@ export default function Home() {
     return (
         <>
             <title>{"Match-Bond 福山"}</title>
-            <meta name="description" content={"広島県福山市を中心に活動する結婚相談所。初期費用無料の完全成功報酬型。一期一会、ご縁を大切に、あなたの幸せを応援します。"} />
+            <meta name="description" content={"Match-Bond｜総額〇〇万円お得に婚活！｜初期費用０円｜福山結婚相談所"} />
 
             <div className="bg_noise"></div>
 

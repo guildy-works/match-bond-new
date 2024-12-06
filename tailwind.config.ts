@@ -36,6 +36,7 @@ const config: Config = {
         fontFamily: {
             jost: "Jost",
             asterdam: ['Amsterdam', 'sans-serif'],
+            slight: ['Slight', 'sans-serif'],
         },
         colors: {
             ...colors,

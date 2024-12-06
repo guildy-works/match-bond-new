@@ -1,9 +1,9 @@
 import { SectionBar } from "@/components/SectionBar"
 import { SnsLinkList } from "@/components/SnsLinkList"
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation"
-import { EventIntroduceSection } from "../events/EventIntroduceSection"
 import LineQR from "@/assets/LineQR.png"
-import Image from "next/image";
+import Image from 'next-export-optimize-images/picture';
+
 
 
 import Insta1 from "@/assets/mock/insta1.jpg";
@@ -14,7 +14,7 @@ import { LinkButton } from "@/components/LinkButton"
 
 export const SnsSection = () => {
     return (
-        <div className="mx-auto px-8 w-full max-w-6xl flex flex-col items-center space-y-8 mt-8">
+        <div className="mx-auto px-8 w-full max-w-6xl flex flex-col items-center space-y-8 mt-8" id="sns">
             <SectionBar text="Sns" />
 
             <SnsLinkList />

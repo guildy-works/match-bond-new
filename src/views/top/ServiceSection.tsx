@@ -6,7 +6,10 @@ import mariage1 from "@/assets/mariage1.png";
 import mariage2 from "@/assets/mariage2.png";
 import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage";
 import { ServiceDialog } from "@/components/ServiceDialog";
-import Image, { StaticImageData } from 'next/image';
+
+import Image from 'next-export-optimize-images/picture';
+import { StaticImageData } from 'next/image';
+
 import ThreeMonthPlan from '@/assets/3month_plan.png'
 import Jba from '@/assets/jba.png';
 import Oaite from '@/assets/oaite.png';
@@ -26,6 +29,7 @@ import Events1 from '@/assets/events/1.png';
 import Events2 from '@/assets/events/2.png';
 import Events3 from '@/assets/events/3.png';
 import Events4 from '@/assets/events/4.png';
+import { HighlightMarker } from "@/components/HighlightMarker";
 
 
 export const ServiceSection = () => {
@@ -131,18 +135,22 @@ const Section2 = () => {
 
 const Section3 = () => {
     return (
-        <div className="w-full mt-24 md:mt-48 bg-color1 flex flex-col items-center">
+        <div className="w-full mt-24 md:mt-48 bg-color1 flex flex-col items-center" id="mariage">
             <TitleType title="結婚相談所" subTitle="Service" className="mt-24" />
             {/* 背景パネル */}
             <div className="max-w-screen-md grid md:grid-cols-2 mx-auto gap-3 ">
                 <div className="flex flex-col gap-8 p-8 sm:p-16 !pb-0 mt-auto items-center">
-                    <FadeAndSlideScrollTriggerAnimation innerClassName="flex flex-col" >
+                    <FadeAndSlideScrollTriggerAnimation innerClassName="items-start" >
                         Match-Bondの結婚相談所は<br />
-                        入会金・登録費といった初期費用が0円！<br />
-                        月会費無料プランを選ぶと月会費も0円！<br />
-                        Match-Bondがお客様に対して成果を出した場合のみ料金を頂く、成果報酬型の結婚相談所です。<br /><br />
+                        入会金・登録費といった<HighlightMarker> 初期費用が0円！</HighlightMarker><br />
+                        月会費無料プランを選ぶと<HighlightMarker> 月会費も0円！</HighlightMarker><br />
+                        Match-Bondがお客様に対して成果を出した場合のみ料金を頂く、成果報酬型の結婚相談所です。
+                    </FadeAndSlideScrollTriggerAnimation>
 
-                        さらに、入会すると、福山市近辺のお店で総額〇〇万円お得なサービスを受けながら、<br />
+
+                    <FadeAndSlideScrollTriggerAnimation   >
+
+                        さらに、入会すると、<HighlightMarker> 福山市近辺のお店で総額〇〇万円お得なサービス</HighlightMarker>を受けながら、<br />
                         効率的に幸せな婚活～結婚を目指すことができます。<br /><br />
 
                         さらにさらに、Match-Bondの婚活イベント、<br />
@@ -150,17 +158,19 @@ const Section3 = () => {
 
                         JBAについて<br />
                         Match-Bondは国内大手のJBA（日本結婚相談協会）に所属しています。<br />
-                        会員数は全国約7万人です。（広島県・岡山県の会員数は約1200名）<br />
+                        <HighlightMarker>    会員数は全国約7万人</HighlightMarker>です。（広島県・岡山県の会員数は約1200名）<br />
                         おあいてネットというサービスにより、いつでもどこでも、他の会員様を検索できます。<br />
                         理想の相手をいっしょに見つけましょう。<br /><br />
+                    </FadeAndSlideScrollTriggerAnimation>
 
-                        <FadeAndSlideScrollTriggerAnimation className="mx-auto md:hidden">
-                            <Image src={Oaite} alt="JBA" className="w-full max-w-[160px]" />
-                        </FadeAndSlideScrollTriggerAnimation>
+                    <FadeAndSlideScrollTriggerAnimation className="mx-auto md:hidden">
+                        <Image src={Oaite} alt="JBA" className="w-full max-w-[160px]" />
+                    </FadeAndSlideScrollTriggerAnimation>
 
+                    <FadeAndSlideScrollTriggerAnimation  >
                         コネクトシップについて<br />
                         他社の結婚相談所（約13企業）の会員様を月額2,000円でご紹介できます。<br />
-                        JBAの会員数と合わせると合計約10万人の会員数になります。<br />
+                        JBAの会員数と合わせると<HighlightMarker> 合計約10万人の会員数</HighlightMarker> になります。<br />
                         （国内最多）<br />
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
@@ -193,14 +203,14 @@ const Section6 = () => {
 
             <div className="px-4 md:px-8 my-auto grid grid-cols-2 gap-2 md:gap-8 mx-auto">
                 <div>
-                    <Image src={Review4} alt="安心して相談できました"  className="rounded-2xl"/>
+                    <Image src={Review4} alt="安心して相談できました" className="rounded-2xl" />
                 </div>
                 <div className="flex flex-col gap-2 md:gap-8">
-                    <Image src={Review1} alt="安心して相談できました"  className="rounded-2xl"/>
-                    <Image src={Review2} alt="安心して相談できました"  className="rounded-2xl"/>
+                    <Image src={Review1} alt="安心して相談できました" className="rounded-2xl" />
+                    <Image src={Review2} alt="安心して相談できました" className="rounded-2xl" />
                     <Image src={Review3} alt="安心して相談できました" className="rounded-2xl" />
-                    <Image src={Review5} alt="安心して相談できました"  className="rounded-2xl"/>
-                    <Image src={Review6} alt="安心して相談できました"  className="rounded-2xl"/>
+                    <Image src={Review5} alt="安心して相談できました" className="rounded-2xl" />
+                    <Image src={Review6} alt="安心して相談できました" className="rounded-2xl" />
                 </div>
 
             </div>
@@ -215,25 +225,33 @@ const Section1 = () => {
             <div className="relative max-w-screen-lg grid md:grid-cols-2 py-24 mx-auto gap-3">
                 <div className="w-[100vw] absolute inset-0 md:top-60 bg-[#f5ece7] -z-10" />
 
-                <div className="flex flex-col gap-8 p-8 sm:px-24 sm:pt-48 mt-auto items-center">
+                <div className="flex flex-col gap-8 p-8 sm:px-24 sm:pt-48 mt-auto items-center" id="support">
                     <TitleType title="どんな婚活サポート？" subTitle="Service" />
 
-                    <FadeAndSlideScrollTriggerAnimation tag="p" className="w-full" >
-                        Match-Bondは福山市近辺のお客様限定に婚活サポートを提供しています。<br />
+                    <FadeAndSlideScrollTriggerAnimation className="w-full" >
+                        Match-Bondは<HighlightMarker> 福山市近辺のお客様限定</HighlightMarker> に婚活サポートを提供しています。<br />
                         福山市近辺ってどこまで？それはお客様基準としています。<br />
                         岡山県倉敷市に住んでいるけど、よく福山に行くよというお客様なら福山市近辺です。<br /><br />
 
-                        Match-Bondは福山市近辺のお店に協力してもらい、<br />
-                        婚活・結婚後に利用するサービスをお得に利用できる仕組みを作っています。<br />
+                        <HighlightMarker>  Match-Bondは福山市近辺のお店</HighlightMarker>に協力してもらい、
+
+                        <HighlightMarker>       婚活・結婚後に利用するサービス</HighlightMarker>  を
+
+                        <HighlightMarker>    お得に利用できる仕組み</HighlightMarker>
+                        を作っています。<br />
 
                         例えば、婚活のために外見を磨くことは大切ですよね。<br />
                         美容院、脱毛、エステ、ネイルなど様々なサービスをお得に利用できます。<br />
-                        そして、結婚後は結婚指輪、結婚フォト、結婚式など大きな出費があります。<br /><br />
-                        この大きな出費も軽減することができます。
+                        そして、結婚後は結婚指輪、結婚フォト、結婚式など大きな出費があります。<br />
+                    </FadeAndSlideScrollTriggerAnimation>
 
+                    <TransitionImage alt="私たちの想い" src={mariage1} className="sm:hidden rounded-md mt-auto" />
+
+                    <FadeAndSlideScrollTriggerAnimation className="w-full" >
+                        この大きな出費も軽減することができます。
                         この様な仕組みから<br />
-                        福山市近辺のお店で総額〇〇万円お得なサービスを受けながら、<br />
-                        効率的に幸せな婚活～結婚を目指すことができます。<br /><br />
+                        <HighlightMarker> 福山市近辺のお店で総額〇〇万円お得なサービス</HighlightMarker>を受けながら、
+                        効率的に幸せな婚活～結婚を目指すことができます。 <br /><br />
 
                         この婚活サポートを利用するにはMatch-Bondの<br />
                         結婚相談所に入会して頂きます。<br />
@@ -248,16 +266,16 @@ const Section1 = () => {
                         更に結婚後もお得なサポートありだなんて最高！！！<br />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <div className="">
-                        <LinkButton href="/" title="婚活中にお得なサービスが受けれるお店はコチラ" ></LinkButton>
-                        <LinkButton href="/" title="成婚退会後にお得なサービスが受けれるお店はコチラ" ></LinkButton>
+                    <div className="w-full space-y-4 flex flex-col">
+                        <LinkButton href="/" title="婚活中にお得なサービスが受けれるお店はコチラ" className="px-1 w-full" innerClassName="!px-0" />
+                        <LinkButton href="/" title="成婚退会後にお得なサービスが受けれるお店はコチラ" className="px-2 w-full" innerClassName="!px-0" />
                     </div>
 
                     <p>※お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。</p>
                 </div>
 
                 <div className="px-8 my-auto flex flex-col gap-8 h-full">
-                    <TransitionImage alt="私たちの想い" src={mariage1} className="rounded-md mt-auto" />
+                    <TransitionImage alt="私たちの想い" src={mariage1} className="hidden sm:block rounded-md mt-auto" />
                     <TransitionImage alt="私たちの想い" src={mariage2} className="rounded-md" />
                 </div>
             </div>
@@ -325,11 +343,11 @@ const Section4 = () => {
             <TitleType title="婚活イベント" subTitle="Events" />
 
             <div className="flex flex-col gap-8 p-8 sm:p-16 mt-auto">
-                <FadeAndSlideScrollTriggerAnimation tag="p" >
-                    Match-Bondの婚活イベントはマッチング率96%（2024年10月時点）です。<br />
+                <FadeAndSlideScrollTriggerAnimation  >
+                    Match-Bondの婚活イベントは<HighlightMarker> マッチング率96%</HighlightMarker>（2024年10月時点）です。<br />
                     婚活イベントは最初に最大の難関が待ち構えています。<br />
                     それは、「初体面の気まずさ」です。この難関をどうクリアするか？<br />
-                    Match-Bondはイベントに様々なアイデアを詰め込んでいます。<br />
+                    Match-Bondはイベントに<HighlightMarker> 様々なアイデアを詰め込んでいます。</HighlightMarker><br />
                     どんなアイデアかって？それは参加してみてのお楽しみ！<br /><br />
 
                     「話す」きっかけや流れを作ることで、居心地の良さは変わります。<br />
@@ -340,11 +358,6 @@ const Section4 = () => {
 
                     Match-Bondの結婚相談所に入会すると婚活イベントを毎回500引きで参加できます。
                 </FadeAndSlideScrollTriggerAnimation>
-
-                <LinkButton href="/" title="婚活中にお得なサービスが受けれるお店はコチラから確認" ></LinkButton>
-                <LinkButton href="/" title="成婚退会後にお得なサービスが受けれるお店はコチラから確認" ></LinkButton>
-
-                <p>※お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -8,8 +8,7 @@ import { HighlightMarker } from "@/components/HighlightMarker";
 import { LinkButton } from "@/components/LinkButton";
 import { TitleType } from "@/components/Titles";
 import Profile from "@/assets/profile.png";
-import Image from "next/image";
-
+import Image from 'next-export-optimize-images/picture';
 import Img1 from "@/assets/img1.png";
 import About1 from "@/assets/about1.png";
 import About2 from "@/assets/about2.png";
@@ -36,9 +35,9 @@ export default function AboutSection() {
                         誠にありがとうございます。
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation 
+                    <FadeAndSlideScrollTriggerAnimation
                         tag="p"
-                        innerClassName="mt-3 sm:mt-5 md:mt-7 text-size2 text-color10">
+                        innerClassName="mt-3 sm:mt-5 md:mt-7 text-title4 text-color10 text-color10">
                         Match-Bond代表の山本夢翔です。
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
@@ -59,11 +58,12 @@ export default function AboutSection() {
                         className="bg-color9_2"
                         imageSection={<TransitionImage src={About1} alt="about1" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
-                        簡単に私の自己紹介をさせてください。
-                        1997年10月17日生まれ、生粋のO型です。
-                        中学生の職場体験で保育士を体験し、「絶対に保育士になる！」と保育学科のある高校へ入学後、
-                        校長推薦で短期大学に入学し幼児教育学科を卒業。
-                        その後、福山市にあるこども園に就職しました。
+                        簡単に私の自己紹介をさせてください。<br />
+                        1997年10月17日生まれ、生粋のO型です。<br />
+                        中学生の職場体験で保育士を体験し、「絶対に保育士になる！」
+                        と保育学科のある高校へ入学後、<br />
+                        校長推薦で短期大学に入学し幼児教育学科を卒業。<br />
+                        その後、福山市にあるこども園に就職しました。<br />
                         保育士の仕事をしていると、
                         もっといろんなことを経験してみたいと思うようになり、
                         社会人サークルに参加してみました。
@@ -71,23 +71,23 @@ export default function AboutSection() {
 
                     <FeatureCard
                         title="社会人サークル"
-                                 num="02"
+                        num="02"
                         className="bg-color6 text-color10"
                         imageSection={<TransitionImage src={About2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
-                        想像以上に社会人サークルの良さを感じたため、自分で福山市中心の社会人サークルを設立しました。
-                        社会人サークルを運営していると、遊びに来てくれる人が自然とカップルになることがありました。
+                        想像以上に社会人サークルの良さを感じたため、自分で福山市中心の社会人サークルを設立しました。<br />
+                        社会人サークルを運営していると、遊びに来てくれる人が自然とカップルになることがありました。<br />
                         そんな経験から『人と人を繋げる仕事がしたい。』と思うようになり、結婚相談所の起業を決意しました。
                     </FeatureCard>
 
                     <FeatureCard
-                        title="結婚相談所を起業"
-                                 num="03"
+                        title="結婚相談所"
+                        num="03"
                         className="bg-color12 text-color10"
                         imageSection={<TransitionImage src={Img1} alt="about2" className="w-full rounded-xl " parallaxSlideLength={20} baseScale={1.1} />}
                     >
-                        結婚相談所を起業するために、福山市の結婚相談所を6か所周り、市場調査をしました。
-                        すると、自分だったら入会できない価格設定に驚愕しました。
+                        結婚相談所を起業するために、福山市の結婚相談所を6か所周り、市場調査をしました。<br />
+                        すると、自分だったら入会できない価格設定に驚愕しました。<br />
                         もっと、お客様に寄り添った結婚相談所にしなければ！と思い、Match-Bondができました。
                     </FeatureCard>
 
@@ -97,15 +97,28 @@ export default function AboutSection() {
                             <AboutHeqading num="04" title="サービス" />
                             <FadeAndSlideScrollTriggerAnimation tag="p"
                                 className="space-y-2 mt-3 sm:mt-5 md:mt-7 text-size2"
+                                innerClassName="flex flex-col"
                             >
                                 Match-Bondはお客様のために、大きく分けて2つのサービスを提供します。<br />
                                 1つ目は福山市近辺のお店に協力してもらうことで、<br />
                                 総額〇〇万円をお得に婚活・結婚をしてもらうサービスです。<br />
-                                （詳細はどんな婚活サポートなの？をご確認ください。）<br />
+
+                                <Link
+                                    href="#support"
+                                    className="my-4 font-bold text-size1 text-color9 hover:text-color9 hover:underline transition-colors duration-300"
+                                >
+                                    詳細はコチラ
+                                </Link>
+
                                 2つ目は入会費・登録費といった初期費用が０円。<br />
                                 そして、月会費無料プランを選ぶと月会費も0円という、<br />
                                 結婚相談所のハードルを大きく下げるサービスです。<br />
-                                （詳細は結婚相談所をご確認ください。）<br />
+
+                                <Link href="#mariage"
+                                    className="my-4 font-bold text-size1 text-color9 hover:text-color9 hover:underline transition-colors duration-300">
+                                    詳細はコチラ
+                                </Link>
+
                                 お客様が「お得」「効率的」「幸せ」に婚活できることをお約束します。<br />
                                 結婚した後も幸せが続くようにご支援します。<br />
                             </FadeAndSlideScrollTriggerAnimation>
@@ -115,7 +128,7 @@ export default function AboutSection() {
 
                     <FeatureCard
                         title="結婚について"
-                                 num="05"
+                        num="05"
                         className="bg-color9_2"
                         imageSection={<TransitionImage src={Img2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
@@ -158,7 +171,7 @@ export default function AboutSection() {
     );
 }
 
-const FeatureCard = ({ children, title, imageSection, className ,num}: {num:string, className?: string, children: React.ReactNode, title: string, imageSection: React.ReactNode }) => {
+const FeatureCard = ({ children, title, imageSection, className, num }: { num: string, className?: string, children: React.ReactNode, title: string, imageSection: React.ReactNode }) => {
     return (
         <FadeAndSlideScrollTriggerAnimation transform={{ opacity: 1, translate: { y: "40px" }, scale: 1.1 }}
             innerClassName={clsx("space-y-8 p-12 pb-24 -mt-12 rounded-t-3xl grid md:grid-cols-2", className)}>

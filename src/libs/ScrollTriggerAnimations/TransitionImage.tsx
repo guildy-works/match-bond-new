@@ -2,8 +2,9 @@ import { ScrollTrigger } from "../ScrollTrigger";
 import clsx from "clsx";
 import type { CSSProperties, ReactNode } from "react";
 import React from "react";
-import css from "./AnimatedImage.module.scss";
-import Image, { StaticImageData } from "next/image";
+
+import Image from 'next-export-optimize-images/picture';
+import { StaticImageData } from 'next/image';
 
 export const lerp = (x: number, y: number, t: number) => {
     return (1 - t) * x + t * y;

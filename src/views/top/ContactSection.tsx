@@ -1,6 +1,7 @@
 import { SectionType1 } from "@/components/SectionType1"
 import { SnsLinkList } from "@/components/SnsLinkList"
-import Image from "next/image";
+import Image from 'next-export-optimize-images/picture';
+
 import LineQR from "@/assets/LineQR.png"
 
 export const ContactSection = () => {

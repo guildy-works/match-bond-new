@@ -36,7 +36,7 @@ export const ScrollTrigger = (props: ScrollTriggerProps) => {
     });
     const [mount, setMount] = useState(false);
     const color = useRef(randomColor());
-
+    const nodeRef = useRef(null);
     const Tag = props.tag ?? "div"
 
     useEffect(() => {
@@ -70,6 +70,7 @@ export const ScrollTrigger = (props: ScrollTriggerProps) => {
             }}
         >
             <Transition
+                nodeRef={nodeRef}
                 in={mount}
                 timeout={props.delay ?? 0}
             >

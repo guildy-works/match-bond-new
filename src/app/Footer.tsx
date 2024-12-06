@@ -2,7 +2,8 @@ import Link from "next/link";
 import { menuItems } from "./Header";
 import { SnsLinkList } from "@/components/SnsLinkList";
 import Logo from "@/assets/logo.png";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/picture';
+
 
 export const Footer = () => {
     return (

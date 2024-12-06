@@ -1,5 +1,5 @@
-import type { CSSProperties, ReactNode} from "react";
-import React, { useEffect, useState } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import type { TransitionStatus } from "react-transition-group";
 import { Transition } from "react-transition-group";
 
@@ -19,9 +19,10 @@ export interface TransitionProps {
 export const TransitionTrigger = (props: TransitionProps) => {
     const [isIn, setIn] = useState(false);
     useEffect(() => setIn(!!props.in), [props.in]);
-
+    const nodeRef = useRef(null);
     return <>
         <Transition
+            nodeRef={nodeRef}
             className={props.className}
             style={props.style}
             in={isIn}

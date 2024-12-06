@@ -1,24 +1,28 @@
 'use client'
 
-import { css } from "@emotion/css";
 import Link from "next/link";
 import styles from "./LinkButton.module.scss";
+import clsx from "clsx";
 
-export const LinkButton  = (
+export const LinkButton = (
     {
         href,
         title,
         subTitle,
+        className,
+        innerClassName
     }: {
         href: string,
         title?: string
-        subTitle?: string
+        subTitle?: string;
+        className?: string;
+        innerClassName?: string;
     }
 ) => {
 
     return (
-        <Link href={href} >
-            <div className={styles.viewMore}>
+        <Link href={href} className={className}>
+            <div className={clsx(styles.viewMore, innerClassName)} >
                 {
                     title && <h2
                         style={{
@@ -29,13 +33,14 @@ export const LinkButton  = (
                         {title}
                     </h2>
                 }
-                <h2
+                {!!subTitle && subTitle !== "" && <h2
                     style={{
                         fontFamily: "'Jost', 'Noto Sans JP', sans-serif",
                         userSelect: "none"
                     }}>
                     {subTitle}
                 </h2>
+                }
             </div>
         </Link>
     );

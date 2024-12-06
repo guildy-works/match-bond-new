@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import React from "react";
-import Image, { StaticImageData, } from "next/image";
+import Image from 'next-export-optimize-images/picture';
+import { StaticImageData } from 'next/image';
 import { ScrollTrigger } from "../ScrollTrigger/ScrollTrigger";
 
 

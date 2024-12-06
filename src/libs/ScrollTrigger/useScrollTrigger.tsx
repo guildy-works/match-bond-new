@@ -131,7 +131,7 @@ interface ScrollTriggerOption {
 }
 
 export const useScrollTrigger = (options: ScrollTriggerOption = {}) => {
-    const store = React.useRef();
+    const store = React.useRef(null);
     const context = useScrollContext();
     const [trigger, setTrigger] = React.useState<ScrollInfo>(() =>
         defaultTrigger(store, options, context) ?? {

@@ -1,7 +1,7 @@
 import Line from '@/assets/sns/LINE.svg'
 import Instagram from '@/assets/sns/Instagram.svg'
 import X from '@/assets/sns/X.svg'
-import Image from 'next/image'
+import Image from 'next-export-optimize-images/picture';
 
 export const SnsLinkList = () => {
     return (

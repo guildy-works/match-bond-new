@@ -5,16 +5,16 @@ import { MdClose, MdMenu } from 'react-icons/md';
 import { SnsLinkList } from '@/components/SnsLinkList';
 import { FadeAndSlideAnimation } from '@/libs/Animations/FadeAndSlideAnimation';
 import Logo from "@/assets/logo.png";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/picture';
+
 import { useScrollState } from '@/libs/ScrollTrigger';
 
 export const menuItems = [
     { href: "/", label: "TOP" },
-    { href: "/about", label: "ABOUT", },
-    { href: "/services", label: "サービス・料金プラン" },
-    { href: "/news", label: "お知らせ" },
-    { href: "/events", label: "イベント情報" },
-    { href: "/contacts", label: "お問い合わせ" },
+    { href: "/#sns", label: "SNS" },
+    { href: "/#support", label: "婚活サポート" },
+    { href: "/#mariage", label: "結婚相談所", },
+    { href: "/#contacts", label: "お問い合わせ" },
 ];
 
 export const Header = () => {
@@ -26,7 +26,7 @@ export const Header = () => {
             <header className="flex items-center sticky top-0 mt-0 bg-white/60 backdrop-blur-lg z-20">
                 {state.scrollTop > 0 && (
                     <Link href="/">
-                        <h1 className='font-asterdam ml-3 text-color3 text-[26px] font-extralight whitespace-nowrap'>Match Bond</h1>
+                        <h1 className='font-slight ml-3 text-color3 text-[26px] font-extralight whitespace-nowrap'>Match Bond</h1>
                     </Link>
                 )
                 }
@@ -98,7 +98,7 @@ const Drawer = ({ isOpen, setIsOpen, children }: React.PropsWithChildren<Props>)
             <div className="fixed inset-0 z-50">
                 <DialogPanel className="relative bg-white/80 backdrop-blur-lg w-full h-screen p-4 flex flex-col items-center">
 
-                    <h1 className='py-6 text-title2 font-asterdam text-color3'>Match Bond</h1>
+                    <h1 className='py-6 text-title2 font-slight text-color3'>Match Bond</h1>
 
                     <nav className="flex flex-col gap-6 h-full justify-center items-start">
                         {menuItems.map((item, index) => (

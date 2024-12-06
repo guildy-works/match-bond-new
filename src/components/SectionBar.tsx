@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from 'next-export-optimize-images/picture';
+
 import { ReactNode } from "react";
 
 import SectionImg from "@/assets/section_bar.svg" 

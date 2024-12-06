@@ -1,6 +1,7 @@
 import { SectionType1 } from "@/components/SectionType1";
 import { FadeAndSlideAnimation } from "@/libs/Animations/FadeAndSlideAnimation";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
+import { ReactNode } from "react";
 
 export const FeaturesSection = () => {
 
@@ -9,13 +10,10 @@ export const FeaturesSection = () => {
             <div className="max-w-4xl mx-auto md:mt-40 flex flex-col gap-12 items-center pb-20">
                 <FadeAndSlideScrollTriggerAnimation innerClassName="space-y-3 w-fit">
                     <h2 className="text-center">
-                        <span className="text-color9 text-title1">6</span>
-                        <span className="text-grey1 text-title2">つの特徴</span>
+                        <span className="text-color9 text-title1">Match-Bond</span>
+                        <span className="text-grey1 text-title2">のサービス</span>
                     </h2>
                     <hr className="border-color11" />
-                    <p className="mt-0 text-size2 text-grey1">
-                        Match-Bondのサービス
-                    </p>
                 </FadeAndSlideScrollTriggerAnimation>
 
                 <FadeAndSlideScrollTriggerAnimation tag="p" innerClassName="" className="text-color10">
@@ -35,10 +33,12 @@ export const FeaturesSection = () => {
     )
 }
 
-const CardItem = ({ title, content, colorClass }: { title: string, content: string, colorClass: string }) => {
+const CardItem = ({ title, content, colorClass }: { title: ReactNode, content: ReactNode, colorClass: string }) => {
     return (
-        <FadeAndSlideScrollTriggerAnimation className={`text-center p-3 sm:p-6 rounded-3xl flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
-            <h2 className="text-size2 text-white mb-2 border-b-orange-100 border-b-2  pb-2 w-full ">{title}</h2>
+        <FadeAndSlideScrollTriggerAnimation 
+        innerClassName="w-full"
+        className={`w-full text-center p-3 sm:p-6 rounded-3xl flex flex-col justify-center items-center min-h-28 ${colorClass}`}>
+            <h2 className="text-size2 text-white mb-2 border-b-orange-100 border-b-2  pb-2 w-full whitespace-pre">{title}</h2>
             <p className="text-p text-white">{content}</p>
         </FadeAndSlideScrollTriggerAnimation>
     );
@@ -49,32 +49,32 @@ const CardGrid = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <CardItem
                 title="どんな婚活サポート？"
-                content="「お得」「効率的」「幸せ」"
+                content={<>お得」「効率的」<br className="sm:hidden"/>「幸せ」</>}
                 colorClass="bg-color9"
             />
             <CardItem
-                title="お得なサービスが受けれるお店一覧"
+                title={<>お得なサービスが<br className="sm:hidden"/>受けれるお店一覧</>}
                 content="婚活～結婚に有益なお店"
                 colorClass="bg-color10"
             />
             <CardItem
                 title="お客様の声"
-                content="福山市No1のGoogle口コミ"
+                content={<>福山市No1の<br className="sm:hidden"/>Google口コミ</>}
                 colorClass="bg-color11"
             />
             <CardItem
                 title="結婚相談所"
-                content="「入会金・登録費」初期費用が0円"
+                content={<>「入会金・登録費」<br className="sm:hidden"/>初期費用が0円</>}
                 colorClass="bg-color9"
             />
             <CardItem
                 title="婚活イベント"
-                content="「お得」「効率的」「幸せ」"
+                content={<>「お得」「効率的」<br className="sm:hidden"/>「幸せ」</>}
                 colorClass="bg-color10"
             />
             <CardItem
                 title="恋愛相談窓口"
-                content="初回15分無料 まずは、ココから！"
+                content={<>初回15分無料<br className="sm:hidden"/>まずは、ココから！</>}
                 colorClass="bg-color11"
             />
         </div>
