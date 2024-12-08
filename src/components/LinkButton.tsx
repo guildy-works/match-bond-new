@@ -33,14 +33,6 @@ export const LinkButton = (
                         {title}
                     </h2>
                 }
-                {!!subTitle && subTitle !== "" && <h2
-                    style={{
-                        fontFamily: "'Jost', 'Noto Sans JP', sans-serif",
-                        userSelect: "none"
-                    }}>
-                    {subTitle}
-                </h2>
-                }
             </div>
         </Link>
     );

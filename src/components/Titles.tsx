@@ -7,7 +7,7 @@ export const TitleType = ({ title, subTitle, className }: { title: string, subTi
             <h2 className="text-[2rem] text-color9/20 font-asterdam" >
                 {subTitle}
             </h2>
-            <h2 className="text-[1.5rem] text-title2 text-color9 font-Jost mt-2" >
+            <h2 className="text-[1.5rem] text-title2 text-color9 mt-2" >
                 {title}
             </h2>
         </FadeAndSlideScrollTriggerAnimation>

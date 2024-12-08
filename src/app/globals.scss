@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900");
-
 @font-face {
     font-family: "Amsterdam";
     src: url("/match-bond-new/Amsterdam_Four.woff");
@@ -68,5 +66,5 @@ div {
     opacity: 0.02;
     background-size: 150px 150px;
     pointer-events: none;
-    background-image: url("/bg_noise.png");
+    background-image: url("/match-bond-new/bg_noise.png");
 }

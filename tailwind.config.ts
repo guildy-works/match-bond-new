@@ -34,7 +34,6 @@ const config: Config = {
             xl: '1920px',
         },
         fontFamily: {
-            jost: "Jost",
             asterdam: ['Amsterdam', 'sans-serif'],
             slight: ['Slight', 'sans-serif'],
         },

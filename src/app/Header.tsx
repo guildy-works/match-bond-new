@@ -129,7 +129,7 @@ const Drawer = ({ isOpen, setIsOpen, children }: React.PropsWithChildren<Props>)
                             </FadeAndSlideAnimation>
                         ))}
                     </nav>
-                    <Image className="mb-8" src={Logo} alt="Match-Bond" width={120} height={120} />
+                    <Image className="mb-8" src={Logo} alt="Match-Bond" width={120} height={120}  loading="lazy"/>
 
                     <SnsLinkList />
 

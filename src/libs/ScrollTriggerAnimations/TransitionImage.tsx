@@ -59,6 +59,7 @@ export const TransitionImage = (props: TransitionImageProps) => {
                             <Image
                                 alt={props.alt}
                                 src={props.src}
+                                loading="lazy"
                                 style={{
                                     height: "100%",
                                     width: "100%",
