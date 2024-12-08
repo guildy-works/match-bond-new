@@ -45,16 +45,16 @@ export const TransitionImage = (props: TransitionImageProps) => {
             className={clsx("overflow-hidden relative", props.className)}
         >
             {
-                (state, info) => <>
+                ( info) => <>
                     <div
                         className="size-full"
                     >
                         <div style={{
                             height: `calc(100% + ${range}px)`,
                             width: "100%",
-                            opacity: state === "entered" ? 1 : 0,
+                            opacity: info.triggered ? 1 : 0,
                             transition: "all 1.5s cubic-bezier(0.13, 0.59, 0.01, 0.98)",
-                            transform: state === "entered" ? `translateY(${getPosition(info.scrollProgress)}px) scale(${getScale(info.scrollProgress)})` : "",
+                            transform: info.triggered? `translateY(${getPosition(info.scrollProgress)}px) scale(${getScale(info.scrollProgress)})` : "",
                         }}>
                             <Image
                                 alt={props.alt}
@@ -64,7 +64,7 @@ export const TransitionImage = (props: TransitionImageProps) => {
                                     width: "100%",
                                     objectFit: "cover",
                                     transition: "all 2.4s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                                    transform: state === "entered" ? "scale(1.3)" : "scale(1.5)",
+                                    transform: info.triggered ? "scale(1.3)" : "scale(1.5)",
                                 }}
                             />
                         </div>
@@ -100,28 +100,28 @@ export const TransitionStaticImage = (props: TransitionStaticImageProps) => {
             className={props.className}
         >
             {
-                (state, info) => <>
+                (info) => <>
                     <div style={{
                         transition: "all 3s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                        opacity: state === "entered" ? 1 : 0,
+                        opacity: info.triggered ? 1 : 0,
                         position: "relative",
                         overflow: "hidden",
                         width: "100%",
                         height: "100%",
-                        transform: state === "entered" ? "translateY(0)" : "translateY(30px)",
+                        transform:info.triggered ? "translateY(0)" : "translateY(30px)",
                     }}>
                         <div style={{
                             height: `calc(100% + ${range}px)`,
                             width: "100%",
                             transition: "all 1.5s cubic-bezier(0.13, 0.59, 0.01, 0.98)",
-                            transform: state === "entered" ? `translateY(${getPosition(info.scrollProgress)}px) scale(${getScale(info.scrollProgress)})` : "",
+                            transform: info.triggered ? `translateY(${getPosition(info.scrollProgress)}px) scale(${getScale(info.scrollProgress)})` : "",
                         }}>
                             {props.children({
                                 height: "100%",
                                 width: "100%",
                                 objectFit: "cover",
                                 transition: "all 2.4s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                                transform: state === "entered" ? "scale(1.3)" : "scale(1.5)",
+                                transform: info.triggered ? "scale(1.3)" : "scale(1.5)",
                             })}
                         </div>
                     </div>

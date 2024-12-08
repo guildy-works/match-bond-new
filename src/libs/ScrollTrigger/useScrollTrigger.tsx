@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
-import type { ScrollContainerContext} from "./contexts";
+import type { ScrollContainerContext } from "./contexts";
 import { useScrollContext } from "./contexts";
 
-interface ScrollInfo {
+export interface ScrollInfo {
     scrollDirection: "up" | "down";
+    // ターゲットの一部を含めたスクロールの進行度
     scrollProgress: number;
+    // 完全に重なってからのスクロールの進行度
+    offsetProgress: number;
     isOverlap: boolean;
 }
 
@@ -20,18 +23,18 @@ const toPixel = (
     const ammount = Number(param.replace(/[a-zA-Z|%]/g, ""));
     const unit = param.replace(/[^a-zA-Z|%]/g, "");
     switch (unit) {
-    case "vh": {
-        const containerHeight = container.clientHeight;
-        return containerHeight * ammount * 0.01;
-    }
-    case "px": {
-        return ammount;
-    }
-    case "%": {
-        const targetHeight = target.clientHeight;
-        return targetHeight * ammount * 0.01;
-    }
-    default: return ammount;
+        case "vh": {
+            const containerHeight = container.clientHeight;
+            return containerHeight * ammount * 0.01;
+        }
+        case "px": {
+            return ammount;
+        }
+        case "%": {
+            const targetHeight = target.clientHeight;
+            return targetHeight * ammount * 0.01;
+        }
+        default: return ammount;
     }
 };
 
@@ -46,24 +49,24 @@ export const parse = (expression: string | number,
     let sum = toPixel(blocks[0], container, target);
     for (let i = 1; i < blocks.length - 1; i++) {
         switch (blocks[i]) {
-        case "+":
-            sum += toPixel(blocks[i + 1], container, target);
-            break;
-        case "-":
-            sum -= toPixel(blocks[i + 1], container, target);
-            break;
-        case "*":
-            sum *= toPixel(blocks[i + 1], container, target);
-            break;
-        case "/":
-            sum /= toPixel(blocks[i + 1], container, target);
-            break;
-        case "%":
-            sum %= toPixel(blocks[i + 1], container, target);
-            break;
-        default:
-            sum += toPixel(blocks[i + 1], container, target);
-            break;
+            case "+":
+                sum += toPixel(blocks[i + 1], container, target);
+                break;
+            case "-":
+                sum -= toPixel(blocks[i + 1], container, target);
+                break;
+            case "*":
+                sum *= toPixel(blocks[i + 1], container, target);
+                break;
+            case "/":
+                sum /= toPixel(blocks[i + 1], container, target);
+                break;
+            case "%":
+                sum %= toPixel(blocks[i + 1], container, target);
+                break;
+            default:
+                sum += toPixel(blocks[i + 1], container, target);
+                break;
         }
     }
 
@@ -80,6 +83,7 @@ const defaultTrigger = (
 
     let isFire = false;
     let progress = 0;
+    let progress2 = 0;
     if (target && container) {
         const targetEndOffset = parse(targetOptions.scrollEndOffset ?? 0, container, target);
         const targetStartOffset = parse(targetOptions.scrollStartOffset ?? 0, container, target);
@@ -104,10 +108,17 @@ const defaultTrigger = (
         const containerStart = container.clientHeight * (containerStartPosition * 0.01);
         const containerEnd = container.clientHeight * (containerEndPosition * 0.01);
         const targetStart = (offsetTop + targetStartOffset);
-        const targetEnd = (offsetTop + targetEndOffset);
 
-        const scrollableRange = containerStart - containerEnd - (targetStartOffset - targetEndOffset);
-        progress = (targetEnd - containerEnd) / scrollableRange;
+        // bottom of target
+        const targetEnd = (offsetTop + targetAbsoluteRect.height + targetEndOffset);
+        const scrollableRange =   containerStart - containerEnd - (targetStartOffset - targetEndOffset);
+
+        progress = ((targetEnd - containerEnd)) / (targetAbsoluteRect.height+ scrollableRange);
+        progress = 1 - Math.max(0, Math.min(progress, 1))
+
+        progress2 =(targetEnd- containerStart)/(targetAbsoluteRect.height- scrollableRange) ;
+        progress2 = 1- Math.max(0, Math.min(progress2, 1))
+
         if (containerStart > targetStart) {
             if (containerEnd < targetEnd) {
                 isFire = true;
@@ -117,7 +128,8 @@ const defaultTrigger = (
 
     return {
         scrollDirection: store.current < previous ? "down" : "up",
-        scrollProgress: 1 - Math.max(0, Math.min(progress, 1)),
+        scrollProgress: progress,
+        offsetProgress: progress2,
         isOverlap: isFire,
     };
 };
@@ -138,6 +150,7 @@ export const useScrollTrigger = (options: ScrollTriggerOption = {}) => {
             isOverlap: false,
             scrollDirection: "down",
             scrollProgress: 0,
+            offsetProgress: 0,
         });
     const container = context.rawElement;
 

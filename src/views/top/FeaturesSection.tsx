@@ -75,7 +75,7 @@ const CardGrid = () => {
             <CardItem
                 delay={80}
                 title="婚活イベント"
-                content={<>「お得」「効率的」<br className="sm:hidden" />「幸せ」</>}
+                content={<>96％の確率で<br className="sm:hidden" />カップリング成立</>}
                 colorClass="bg-color10"
             />
             <CardItem

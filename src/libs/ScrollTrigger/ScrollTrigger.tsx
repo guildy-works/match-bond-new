@@ -4,18 +4,12 @@ import type { TransitionStatus } from "react-transition-group";
 import { Transition } from "react-transition-group";
 import type { CSSProperties, ElementType, ReactNode } from "react";
 import React, { useEffect, useRef, useState } from "react";
-import { useScrollTrigger } from "./useScrollTrigger";
+import { ScrollInfo, useScrollTrigger } from "./useScrollTrigger";
 
 const randomColor = () => "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 
-interface ScrollInfo {
-    scrollDirection: "up" | "down";
-    scrollProgress: number;
-    isOverlap: boolean;
-}
-
 interface ScrollTriggerProps {
-    children: ((status: TransitionStatus, scrollInfo: ScrollInfo) => ReactNode);
+    children: ((scrollInfo: ScrollInfo & { triggered: boolean }) => ReactNode);
     delay?: number;
     once?: boolean;
     forceIn?: boolean;
@@ -36,8 +30,12 @@ export const ScrollTrigger = (props: ScrollTriggerProps) => {
     });
     const [mount, setMount] = useState(false);
     const color = useRef(randomColor());
-    const nodeRef = useRef(null);
     const Tag = props.tag ?? "div"
+
+    const info = {
+        ...trigger,
+        triggered: mount
+    }
 
     useEffect(() => {
         if (!trigger.isOverlap && props.once) {
@@ -50,7 +48,7 @@ export const ScrollTrigger = (props: ScrollTriggerProps) => {
         if (props.forceIn) {
             setMount(true);
         }
-    }, []);
+    }, [props.forceIn]);
 
     return (
         <Tag
@@ -69,13 +67,7 @@ export const ScrollTrigger = (props: ScrollTriggerProps) => {
                 }
             }}
         >
-            <Transition
-                nodeRef={nodeRef}
-                in={mount}
-                timeout={props.delay ?? 0}
-            >
-                {state => props.children(state, trigger)}
-            </Transition>
+            {props.children(info)}
             {
                 context.debug && <Marker
                     color={color.current}

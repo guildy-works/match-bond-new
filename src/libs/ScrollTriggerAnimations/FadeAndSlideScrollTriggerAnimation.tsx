@@ -39,7 +39,7 @@ export const FadeAndSlideScrollTriggerAnimation = ({ tag, children, delay, force
             {state =>
                 <FadeAndSlideAnimation
                     tag={tag}
-                    in={state === "entered"}
+                    in={state.triggered}
                     delay={delay}
                     transform={transform}
                     transformTo={transformTo}

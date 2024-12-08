@@ -19,10 +19,9 @@ export const GrowScrollTriggerAnimation = ({ children, delay, forceIn }: GrowScr
             width: "100%"
         }}
     >
-        {(status, info) => {
-
+        {( info) => {
             return (
-                <FadeAndSlideAnimation in={status === "entered"}>
+                <FadeAndSlideAnimation in={info.triggered}>
                     <div
                         style={{
                             height: "100%",

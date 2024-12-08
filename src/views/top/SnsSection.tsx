@@ -23,7 +23,7 @@ export const SnsSection = () => {
                 {/* 背景テキスト */}
                 <div className="font-slight absolute top-32 left-0 right-0 text-[80px] w-[820px] text-color9/20 -rotate-12 ">
                     Match-Bond
-                </div>婚活イベント
+                </div>
                 <FadeAndSlideScrollTriggerAnimation>
                     婚活に関する情報、婚活イベントの告知をInstagramから配信しております。<br />
                     司会業、様々なイベント、社会人サークルのInstagramも併せて、<br />
@@ -38,7 +38,7 @@ export const SnsSection = () => {
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
 
-            <Image src={LineQR} alt="sns" className="hidden md:block rounded-lg mt-40 w-[180px]" />
+            <Image src={LineQR} alt="sns" className="hidden md:block rounded-lg w-[180px]" />
 
             <h2 className="text-title2">Instagramだけの最新情報</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-screen-sm md:max-w-screen-md" >

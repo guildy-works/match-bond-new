@@ -175,7 +175,7 @@ export default function AboutSection() {
 const FeatureCard = ({ children, title, imageSection, className, num }: { num: string, className?: string, children: React.ReactNode, title: string, imageSection: React.ReactNode }) => {
     return (
         <FadeAndSlideScrollTriggerAnimation transform={{ opacity: 1, translate: { y: "40px" }, scale: 1.1 }}
-            innerClassName={clsx("space-y-8 p-12 pb-24 -mt-12 rounded-t-3xl grid md:grid-cols-2", className)}>
+            innerClassName={clsx("space-y-8 p-8 md:p-16 pt-12 pb-24 -mt-12 rounded-t-3xl grid md:grid-cols-2", className)}>
             <div className="flex flex-col justify-center md:p-8 gap-4">
                 <AboutHeqading num={num} title={title} />
                 <FadeAndSlideScrollTriggerAnimation tag="p"

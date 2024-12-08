@@ -50,9 +50,9 @@ export const ServiceSection = () => {
 
 const Glossary = () => {
     return (
-        <div className="px-6">
+        <div >
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-title3 font-bold text-gray-800 mb-2">用語説明</h1>
+                <h1 className="text-title3 font-bold text-gray-800 mb-2 mt-4">用語説明</h1>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
                     <GlossaryItem
                         delay={0}
@@ -101,8 +101,8 @@ const GlossaryItem = ({ term, description, delay }: any) => {
 
 const Section2 = () => {
     return (
-        <div className="w-full bg-color1">
-            <div className='max-w-6xl mx-auto px-4 py-8 flex flex-col'>
+        <div className="w-full bg-color1  p-8 sm:p-16">
+            <div className='max-w-6xl mx-auto py-8 flex flex-col'>
                 <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-6">
                     <TitleType title="料金プラン" subTitle="Plans" className="mx-auto" />
                 </FadeAndSlideScrollTriggerAnimation>
@@ -131,10 +131,13 @@ const Section2 = () => {
                             description='沢山の方とのお見合いを経て、「この人だ。」と思えるお相手を探したい方にお勧めのプランです。'
                         />
                     </FadeAndSlideScrollTriggerAnimation>
+
+
                 </div>
+
+                <Glossary />
             </div>
 
-            <Glossary />
         </div>
     )
 }
@@ -154,8 +157,7 @@ const Section3 = () => {
                     </FadeAndSlideScrollTriggerAnimation>
 
 
-                    <FadeAndSlideScrollTriggerAnimation   >
-
+                    <FadeAndSlideScrollTriggerAnimation className="w-full" >
                         さらに、入会すると、<HighlightMarker> 福山市近辺のお店で総額〇〇万円お得なサービス</HighlightMarker>を受けながら、<br />
                         効率的に幸せな婚活～結婚を目指すことができます。<br /><br />
 
@@ -173,7 +175,7 @@ const Section3 = () => {
                         <Image src={Oaite} alt="JBA" className="w-full max-w-[160px]" />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation  >
+                    <FadeAndSlideScrollTriggerAnimation className="w-full">
                         コネクトシップについて<br />
                         他社の結婚相談所（約13企業）の会員様を月額2,000円でご紹介できます。<br />
                         JBAの会員数と合わせると<HighlightMarker> 合計約10万人の会員数</HighlightMarker> になります。<br />
@@ -197,7 +199,7 @@ const Section3 = () => {
 
 const Section6 = () => {
     return (
-        <div className="w-full my-32 bg-[#f5ece7] max-w-screen-md grid md:grid-cols-2 py-24 mx-auto gap-3">
+        <div className="w-full my-32 bg-[#f5ece7] max-w-screen-md grid md:grid-cols-2 py-24 md:px-32 mx-auto gap-3">
             <div className="flex flex-col gap-8 p-8 sm:p-16 my-auto items-center">
                 <TitleType title="お客様の声" subTitle="Reviews" />
                 <LinkButton href="https://g.co/kgs/CJDKC7U" title="Google口コミはこちら" ></LinkButton>
@@ -207,11 +209,11 @@ const Section6 = () => {
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
 
-            <div className="px-4 md:px-8 my-auto grid grid-cols-2 gap-2 md:gap-8 mx-auto">
+            <div className="px-8 max-w-screen-sm my-auto grid grid-cols-2 gap-2 md:gap-6 mx-auto">
                 <div>
                     <Image src={Review4} alt="安心して相談できました" className="rounded-2xl" />
                 </div>
-                <div className="flex flex-col gap-2 md:gap-8">
+                <div className="flex flex-col gap-2 md:gap-6">
                     <Image src={Review1} alt="安心して相談できました" className="rounded-2xl" />
                     <Image src={Review2} alt="安心して相談できました" className="rounded-2xl" />
                     <Image src={Review3} alt="安心して相談できました" className="rounded-2xl" />
@@ -294,7 +296,7 @@ const Section5 = () => {
         <SectionType1 className="w-full bg-color1 py-8 md:py-24" innerClassName="flex flex-col items-center">
             <TitleType title="恋愛・お悩み相談窓口" subTitle="Consultants" />
 
-            <FadeAndSlideScrollTriggerAnimation tag="p" className="mt-6">
+            <FadeAndSlideScrollTriggerAnimation tag="p" className="mt-8" innerClassName="w-full">
                 Match-Bondの恋愛相談窓口は<br />
                 「恋愛」「婚活」「結婚後」「夫婦関係」「子育て」<br />
                 についてのお悩みを受け付けています。<br /><br />
@@ -304,7 +306,7 @@ const Section5 = () => {
                 恋愛相談窓口をご利用ください。<br />
             </FadeAndSlideScrollTriggerAnimation>
 
-            <div className='max-w-6xl mx-auto px-4 py-8'>
+            <div className='max-w-6xl mx-auto mt-8'>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <FadeAndSlideScrollTriggerAnimation innerClassName='h-full'>
                         <PricingPlan
@@ -335,7 +337,7 @@ const Section5 = () => {
                 </div>
             </div>
 
-            <p>
+            <p className="mt-8">
                 初回15分無料で恋愛相談窓口を利用できます！<br />
                 ※事前予約が必要です。
             </p>
@@ -346,9 +348,9 @@ const Section5 = () => {
 const Section4 = () => {
     return (
         <SectionType1 className="w-full bg-color1 py-8 md:py-24" innerClassName="flex flex-col items-center">
-            <TitleType className="mt-16" title="婚活イベント" subTitle="Events" />
+            <TitleType title="婚活イベント" subTitle="Events" />
 
-            <div className="flex flex-col gap-8 p-8 sm:p-16 mt-auto">
+            <div className="flex flex-col gap-8 mt-auto">
                 <FadeAndSlideScrollTriggerAnimation  >
                     Match-Bondの婚活イベントは<HighlightMarker> マッチング率96%</HighlightMarker>（2024年10月時点）です。<br />
                     婚活イベントは最初に最大の難関が待ち構えています。<br />
@@ -366,7 +368,7 @@ const Section4 = () => {
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                 <FadeAndSlideScrollTriggerAnimation innerClassName="h-full">
                     <Image src={Events1} alt="sns" className="rounded-lg h-full" />
                 </FadeAndSlideScrollTriggerAnimation>

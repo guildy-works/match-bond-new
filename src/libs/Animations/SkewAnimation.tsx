@@ -1,10 +1,10 @@
 
 import clsx from "clsx";
 import React, { ElementType, ReactNode, useEffect, useRef, useState } from "react";
-import { Transition, TransitionProps } from "../ScrollTrigger";
+import { Transition, TransitionStatus } from "react-transition-group";
+import { TransitionProps } from "./FadeAndSlideAnimation";
 
-type AnimationProps = TransitionProps;
-interface SkewAnimationProp extends AnimationProps {
+interface SkewAnimationProp extends TransitionProps {
     bgcolor?: string;
     speed?: number;
     skewPanelClass?: string;
@@ -16,7 +16,7 @@ export const SkewAnimation = (props: SkewAnimationProp) => {
     const [time, setTime] = useState(0);
 
     const Tag = props.tag ?? "div";
-
+    const nodeRef = useRef(null);
     useEffect(() => {
         const width = el?.getBoundingClientRect().width;
         if (width) {
@@ -29,7 +29,9 @@ export const SkewAnimation = (props: SkewAnimationProp) => {
         }
     }, [el, time, props.speed]);
 
-    return <Transition {...props}>
+    const timeout = props.delay ?? 0;
+
+    return <Transition in={props.in} timeout={timeout} nodeRef={nodeRef}>
         {
             state => <Tag
                 style={{

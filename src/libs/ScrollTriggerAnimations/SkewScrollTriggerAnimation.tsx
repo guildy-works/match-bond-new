@@ -27,7 +27,7 @@ export const SkewScrollTriggerAnimation = ({
         {
             state => <SkewAnimation
                 bgcolor={bgcolor}
-                in={state === "entered"}
+                in={state.triggered}
                 style={style}
                 className={innerClassName}
                 skewPanelClass={skewPanelClass}

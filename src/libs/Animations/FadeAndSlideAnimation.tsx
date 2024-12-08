@@ -1,7 +1,15 @@
-import { ElementType, ReactNode, useState } from "react";
-import { Transition, TransitionProps } from "../ScrollTrigger";
+import { CSSProperties, ElementType, ReactNode, useRef, useState } from "react";
+import { Transition, TransitionStatus } from "react-transition-group";
 import clsx from "clsx";
 
+export interface TransitionProps {
+    children?: ReactNode | ((status: TransitionStatus) => ReactNode);
+    delay?:  number | { appear?: number | undefined; enter?: number | undefined; exit?: number | undefined };
+    duration?: number;
+    in?: boolean;
+    className?: string;
+    style?: CSSProperties;
+}
 
 interface FadeAndSlideAnimationProps extends TransitionProps {
     transform?: {
@@ -31,15 +39,15 @@ interface FadeAndSlideAnimationProps extends TransitionProps {
 
 export const FadeAndSlideAnimation = (props: FadeAndSlideAnimationProps) => {
     const { transform, transformTo } = props;
-
+    const timeout = props.delay ?? 0;
+    const nodeRef = useRef(null);
     const buildTransform = (transform: FadeAndSlideAnimationProps["transform"], scale: number) =>
         `translate(${transform?.translate?.x ?? "0"},${transform?.translate?.y ?? "0"}) rotate(${transform?.rotate ?? "0"}) scale(${transform?.scale ?? scale})`
 
     const Tag = props.tag ?? "div";
 
     return <Transition
-        in={props.in}
-        delay={props.delay}
+        in={props.in} timeout={timeout} nodeRef={nodeRef}
     >
         {state => {
 
